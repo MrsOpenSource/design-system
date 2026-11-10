@@ -1,0 +1,34 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "component": {
+    "input": {
+      "surface": {
+        "default": { "$value": "{sys.color.surface.card}", "$type": "color" },
+        "disabled": { "$value": "{sys.color.surface.sunken}", "$type": "color" }
+      },
+      "border": {
+        "default": { "$value": "{sys.color.border.default}", "$type": "color" },
+        "focus": { "$value": "{sys.color.brand.primary}", "$type": "color" },
+        "error": { "$value": "{sys.color.status.danger.border}", "$type": "color" },
+        "width": { "$value": "1.5px", "$type": "dimension" },
+        "radius": { "$value": "{radius.md}", "$type": "dimension" }
+      },
+      "text": {
+        "value": { "$value": "{sys.color.text.primary}", "$type": "color" },
+        "placeholder": { "$value": "{sys.color.text.tertiary}", "$type": "color" },
+        "disabled": { "$value": "{sys.color.text.tertiary}", "$type": "color" }
+      },
+      "height": {
+        "sm": { "$value": "32px", "$type": "dimension" },
+        "md": { "$value": "40px", "$type": "dimension" },
+        "lg": { "$value": "48px", "$type": "dimension" }
+      },
+      "paddingX": {
+        "sm": { "$value": "{spacing.2-5}", "$type": "dimension" },
+        "md": { "$value": "{spacing.3-5}", "$type": "dimension" },
+        "lg": { "$value": "{spacing.4}", "$type": "dimension" }
+      }
+    }
+  }
+}
+

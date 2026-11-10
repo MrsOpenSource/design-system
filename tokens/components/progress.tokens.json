@@ -1,0 +1,32 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "component": {
+    "progress": {
+      "linear": {
+        "height": {
+          "sm": { "$value": "4px", "$type": "dimension" },
+          "md": { "$value": "8px", "$type": "dimension" },
+          "lg": { "$value": "12px", "$type": "dimension" }
+        },
+        "track": { "$value": "{sys.color.surface.sunken}", "$type": "color" },
+        "fill": { "$value": "{sys.color.brand.primary}", "$type": "color" },
+        "radius": { "$value": "{radius.full}", "$type": "dimension" }
+      },
+      "circular": {
+        "size": {
+          "sm": { "$value": "24px", "$type": "dimension" },
+          "md": { "$value": "40px", "$type": "dimension" },
+          "lg": { "$value": "64px", "$type": "dimension" }
+        },
+        "stroke": {
+          "sm": { "$value": "2.5px", "$type": "dimension" },
+          "md": { "$value": "4px", "$type": "dimension" },
+          "lg": { "$value": "6px", "$type": "dimension" }
+        },
+        "track": { "$value": "{sys.color.surface.sunken}", "$type": "color" },
+        "fill": { "$value": "{sys.color.brand.primary}", "$type": "color" }
+      }
+    }
+  }
+}
+

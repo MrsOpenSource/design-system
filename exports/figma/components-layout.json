@@ -1,0 +1,96 @@
+{
+  "$schema": "https://figma.com/schemas/component-tree.json",
+  "name": "Enterprise Dashboard & Gen AI Component Library",
+  "frames": [
+    {
+      "type": "FRAME",
+      "name": "KpiGrid (4 Columns)",
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 16,
+      "components": [
+        {
+          "name": "KpiCard_Revenue",
+          "elements": [
+            "Header",
+            "Metric: $4,892,150",
+            "Delta: +14.2%",
+            "Progress: 82%"
+          ]
+        },
+        {
+          "name": "KpiCard_ActiveUsers_Sparkline",
+          "elements": [
+            "Header",
+            "Metric: 182,400",
+            "Sparkline: Area Bézier"
+          ]
+        },
+        {
+          "name": "KpiCard_API_Invocations",
+          "elements": [
+            "Header",
+            "Metric: 94.8M",
+            "Sparkline: Micro Bar Series"
+          ]
+        },
+        {
+          "name": "KpiCard_SLA_Uptime",
+          "elements": [
+            "Header",
+            "Metric: 99.98%",
+            "Sparkline: SLA Binary Ticks"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "name": "ChartSection_Revenue_Forecast",
+      "layoutMode": "VERTICAL",
+      "features": [
+        "Cartesian 1px dashed grid",
+        "Header Anomaly Spike Button",
+        "Confidence Corridor P90"
+      ]
+    },
+    {
+      "type": "FRAME",
+      "name": "DataTable_EnterpriseAccounts",
+      "layoutMode": "VERTICAL",
+      "features": [
+        "Sticky headers",
+        "Sortable chevrons",
+        "Mobile card-list transformation"
+      ]
+    },
+    {
+      "type": "FRAME",
+      "name": "GenAI_Conversational_Studio",
+      "layoutMode": "VERTICAL",
+      "components": [
+        {
+          "name": "UserMessageRow",
+          "avatar": "UserAvatar",
+          "bubble": "SoftSunkenBubble"
+        },
+        {
+          "name": "AssistantResponseCard",
+          "avatar": "BotAvatar",
+          "features": [
+            "Borderless Reasoning Accordion",
+            "Citations [1], [2]",
+            "Formula Diff Viewer"
+          ]
+        },
+        {
+          "name": "PromptComposer",
+          "features": [
+            "Context Chips",
+            "Auto-growing Textarea",
+            "Icon-Only Send Button"
+          ]
+        }
+      ]
+    }
+  ]
+}

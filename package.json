@@ -1,0 +1,44 @@
+{
+  "name": "@hsb_design/design-system",
+  "version": "1.4.1",
+  "description": "Multi-device enterprise design system framework for analytical dashboards and Gen AI applications",
+  "type": "module",
+  "bin": {
+    "design-system": "./bin/cli.js"
+  },
+  "main": "dist/ts/tokens.ts",
+  "scripts": {
+    "ui": "node bin/cli.js ui",
+    "start": "node bin/cli.js ui",
+    "build": "node scripts/build-tokens.mjs",
+    "export": "node bin/cli.js export",
+    "prepublishOnly": "node scripts/build-tokens.mjs"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "docs",
+    "scripts",
+    "skills",
+    "src",
+    "tokens",
+    "index.html",
+    "showcase",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "design-system",
+    "tokens",
+    "dashboard",
+    "gen-ai",
+    "figma",
+    "lovable",
+    "antigravity",
+    "dtcg"
+  ],
+  "author": "Enterprise Design System Team",
+  "license": "MIT"
+}

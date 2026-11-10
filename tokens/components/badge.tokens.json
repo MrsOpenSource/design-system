@@ -1,0 +1,50 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "component": {
+    "badge": {
+      "radius": { "$value": "{radius.full}", "$type": "dimension" },
+      "font": {
+        "size": { "$value": "{typography.font-size.xs}", "$type": "dimension" },
+        "weight": { "$value": "{typography.font-weight.bold}", "$type": "fontWeight" },
+        "fontVariantNumeric": { "$value": "tabular-nums", "$type": "string" }
+      },
+      "padding": {
+        "x": { "$value": "{spacing.2-5}", "$type": "dimension" },
+        "y": { "$value": "{spacing.0-5}", "$type": "dimension" }
+      },
+      "variants": {
+        "success": {
+          "background": { "$value": "{sys.color.status.success.surface}", "$type": "color" },
+          "text": { "$value": "{sys.color.status.success.text}", "$type": "color" },
+          "border": { "$value": "{sys.color.status.success.border}", "$type": "color" }
+        },
+        "warning": {
+          "background": { "$value": "{sys.color.status.warning.surface}", "$type": "color" },
+          "text": { "$value": "{sys.color.status.warning.text}", "$type": "color" },
+          "border": { "$value": "{sys.color.status.warning.border}", "$type": "color" }
+        },
+        "danger": {
+          "background": { "$value": "{sys.color.status.danger.surface}", "$type": "color" },
+          "text": { "$value": "{sys.color.status.danger.text}", "$type": "color" },
+          "border": { "$value": "{sys.color.status.danger.border}", "$type": "color" }
+        },
+        "info": {
+          "background": { "$value": "{sys.color.status.info.surface}", "$type": "color" },
+          "text": { "$value": "{sys.color.status.info.text}", "$type": "color" },
+          "border": { "$value": "{sys.color.status.info.border}", "$type": "color" }
+        },
+        "neutral": {
+          "background": { "$value": "{sys.color.surface.sunken}", "$type": "color" },
+          "text": { "$value": "{sys.color.text.secondary}", "$type": "color" },
+          "border": { "$value": "{sys.color.border.subtle}", "$type": "color" }
+        },
+        "ai": {
+          "background": { "$value": "rgba(124, 58, 237, 0.12)", "$type": "color" },
+          "text": { "$value": "{color.ai-special.accent-primary}", "$type": "color" },
+          "border": { "$value": "rgba(124, 58, 237, 0.3)", "$type": "color" }
+        }
+      }
+    }
+  }
+}
+

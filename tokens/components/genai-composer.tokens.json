@@ -1,0 +1,75 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "component": {
+    "genAi": {
+      "composer": {
+        "surface": { "$value": "{color.neutral.0}", "$type": "color" },
+        "borderDefault": { "$value": "{sys.color.border.default}", "$type": "color" },
+        "borderFocus": { "$value": "{sys.color.border.ai}", "$type": "color" },
+        "shadowFocus": { "$value": "{shadow.ai-glow-subtle}", "$type": "shadow" },
+        "radius": { "$value": "{radius.2xl}", "$type": "dimension" },
+        "padding": { "$value": "{spacing.4}", "$type": "dimension" },
+        "minHeight": { "$value": "56px", "$type": "dimension" },
+        "maxHeight": { "$value": "240px", "$type": "dimension" }
+      },
+      "tokenCounter": {
+        "fontFamily": "{typography.font-family.mono}",
+        "fontSize": "{typography.font-size.2xs}",
+        "color": "{sys.color.text.secondary}",
+        "warningColor": "{sys.color.status.warning.text}"
+      },
+      "chatBubble": {
+        "user": {
+          "surface": { "$value": "{color.neutral.100}", "$type": "color" },
+          "text": { "$value": "{sys.color.text.primary}", "$type": "color" },
+          "radius": { "$value": "16px 16px 4px 16px", "$type": "string" }
+        },
+        "assistant": {
+          "surface": { "$value": "{color.neutral.0}", "$type": "color" },
+          "border": { "$value": "{sys.color.border.subtle}", "$type": "color" },
+          "text": { "$value": "{sys.color.text.primary}", "$type": "color" },
+          "radius": { "$value": "16px 16px 16px 4px", "$type": "string" },
+          "aiAccentBadge": { "$value": "{color.ai-special.accent-primary}", "$type": "color" }
+        }
+      },
+      "reasoningAccordion": {
+        "surface": { "$value": "{color.neutral.50}", "$type": "color" },
+        "border": { "$value": "{sys.color.border.subtle}", "$type": "color" },
+        "activeBorder": { "$value": "{color.ai-special.accent-cyan}", "$type": "color" },
+        "radius": { "$value": "{radius.lg}", "$type": "dimension" },
+        "text": { "$value": "{sys.color.text.secondary}", "$type": "color" },
+        "fontFamily": "{typography.font-family.mono}",
+        "fontSize": "{typography.font-size.xs}",
+        "shimmerDuration": { "$value": "1.5s", "$type": "duration" }
+      },
+      "citationPill": {
+        "surface": { "$value": "{color.neutral.100}", "$type": "color" },
+        "surfaceHover": { "$value": "{color.brand.placeholder-secondary.50}", "$type": "color" },
+        "text": { "$value": "{color.ai-special.accent-primary}", "$type": "color" },
+        "border": { "$value": "{sys.color.border.subtle}", "$type": "color" },
+        "radius": { "$value": "{radius.full}", "$type": "dimension" },
+        "fontSize": { "$value": "{typography.font-size.2xs}", "$type": "dimension" },
+        "fontWeight": { "$value": "{typography.font-weight.semibold}", "$type": "fontWeight" }
+      },
+      "diff": {
+        "addition": {
+          "surface": { "$value": "rgba(16, 185, 129, 0.12)", "$type": "color" },
+          "border": { "$value": "rgba(16, 185, 129, 0.35)", "$type": "color" },
+          "text": { "$value": "#065F46", "$type": "color" }
+        },
+        "deletion": {
+          "surface": { "$value": "rgba(239, 68, 68, 0.12)", "$type": "color" },
+          "border": { "$value": "rgba(239, 68, 68, 0.35)", "$type": "color" },
+          "text": { "$value": "#991B1B", "$type": "color" }
+        }
+      },
+      "streamingCursor": {
+        "color": { "$value": "{color.ai-special.accent-primary}", "$type": "color" },
+        "width": { "$value": "8px", "$type": "dimension" },
+        "height": { "$value": "15px", "$type": "dimension" },
+        "radius": { "$value": "2px", "$type": "dimension" }
+      }
+    }
+  }
+}
+

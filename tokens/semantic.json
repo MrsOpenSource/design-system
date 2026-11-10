@@ -1,0 +1,178 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "sys": {
+    "color": {
+      "surface": {
+        "canvas": { "$value": "{color.neutral.50}", "$type": "color", "$description": "Main background for page or viewport" },
+        "card": { "$value": "{color.neutral.0}", "$type": "color", "$description": "Standard container, KPI card and table background" },
+        "elevated": { "$value": "{color.neutral.0}", "$type": "color", "$description": "Modals, popovers, dropdown menus" },
+        "sunken": { "$value": "{color.neutral.100}", "$type": "color", "$description": "Code blocks, table headers, reasoning steps background" },
+        "inverse": { "$value": "{color.neutral.900}", "$type": "color", "$description": "Tooltips, dark mode overlays, inverse banners" },
+        "ai-subtle": { "$value": "{color.brand.placeholder-secondary.50}", "$type": "color", "$description": "AI message card, AI summary widget surface" },
+        "ai-highlight": { "$value": "rgba(124, 58, 237, 0.08)", "$type": "color", "$description": "AI diff addition or inline suggestion background" }
+      },
+      "text": {
+        "primary": { "$value": "{color.neutral.900}", "$type": "color", "$description": "Primary high-contrast readable text" },
+        "secondary": { "$value": "{color.neutral.600}", "$type": "color", "$description": "Secondary labels, timestamps, KPI deltas" },
+        "tertiary": { "$value": "{color.neutral.400}", "$type": "color", "$description": "Placeholders, disabled text, subtle hints" },
+        "inverse": { "$value": "{color.neutral.0}", "$type": "color", "$description": "Text on dark surfaces or inverted tooltips" },
+        "brand": { "$value": "{color.brand.placeholder-primary.600}", "$type": "color", "$description": "Brand colored text or links" },
+        "ai-accent": { "$value": "{color.ai-special.accent-primary}", "$type": "color", "$description": "AI-generated label, sparkle icon color" },
+        "code": { "$value": "{color.neutral.800}", "$type": "color", "$description": "Code blocks and reasoning logs" }
+      },
+      "border": {
+        "subtle": { "$value": "{color.neutral.200}", "$type": "color", "$description": "Card borders, table dividers, panel splitters" },
+        "default": { "$value": "{color.neutral.300}", "$type": "color", "$description": "Input field borders, standard button borders" },
+        "strong": { "$value": "{color.neutral.400}", "$type": "color", "$description": "Active tabs, selected borders, high-contrast frames" },
+        "focus": { "$value": "{color.brand.placeholder-primary.500}", "$type": "color", "$description": "Accessibility keyboard focus ring" },
+        "ai": { "$value": "{color.ai-special.accent-primary}", "$type": "color", "$description": "AI composer focus ring, thinking accordion border" }
+      },
+      "interactive": {
+        "primary": {
+          "default": { "$value": "{color.brand.placeholder-primary.600}", "$type": "color" },
+          "hover": { "$value": "{color.brand.placeholder-primary.700}", "$type": "color" },
+          "active": { "$value": "{color.brand.placeholder-primary.800}", "$type": "color" },
+          "disabled": { "$value": "{color.neutral.300}", "$type": "color" }
+        },
+        "ai-action": {
+          "default": { "$value": "{color.ai-special.accent-primary}", "$type": "color" },
+          "hover": { "$value": "#6D28D9", "$type": "color" },
+          "subtle": { "$value": "{color.brand.placeholder-secondary.50}", "$type": "color" }
+        }
+      },
+      "status": {
+        "success": {
+          "surface": { "$value": "{color.status.success.light}", "$type": "color" },
+          "border": { "$value": "{color.status.success.border}", "$type": "color" },
+          "text": { "$value": "{color.status.success.dark}", "$type": "color" },
+          "icon": { "$value": "{color.status.success.base}", "$type": "color" }
+        },
+        "warning": {
+          "surface": { "$value": "{color.status.warning.light}", "$type": "color" },
+          "border": { "$value": "{color.status.warning.border}", "$type": "color" },
+          "text": { "$value": "{color.status.warning.dark}", "$type": "color" },
+          "icon": { "$value": "{color.status.warning.base}", "$type": "color" }
+        },
+        "danger": {
+          "surface": { "$value": "{color.status.danger.light}", "$type": "color" },
+          "border": { "$value": "{color.status.danger.border}", "$type": "color" },
+          "text": { "$value": "{color.status.danger.dark}", "$type": "color" },
+          "icon": { "$value": "{color.status.danger.base}", "$type": "color" }
+        },
+        "info": {
+          "surface": { "$value": "{color.status.info.light}", "$type": "color" },
+          "border": { "$value": "{color.status.info.border}", "$type": "color" },
+          "text": { "$value": "{color.status.info.dark}", "$type": "color" },
+          "icon": { "$value": "{color.status.info.base}", "$type": "color" }
+        }
+      }
+    },
+    "typography": {
+      "display": {
+        "large": {
+          "fontFamily": "{typography.font-family.display}",
+          "fontSize": "{typography.font-size.5xl}",
+          "fontWeight": "{typography.font-weight.bold}",
+          "lineHeight": "{typography.line-height.tight}",
+          "letterSpacing": "{typography.letter-spacing.tight}"
+        },
+        "medium": {
+          "fontFamily": "{typography.font-family.display}",
+          "fontSize": "{typography.font-size.4xl}",
+          "fontWeight": "{typography.font-weight.bold}",
+          "lineHeight": "{typography.line-height.tight}"
+        }
+      },
+      "kpi": {
+        "metric-hero": {
+          "fontFamily": "{typography.font-family.sans}",
+          "fontSize": "{typography.font-size.4xl}",
+          "fontWeight": "{typography.font-weight.bold}",
+          "lineHeight": "{typography.line-height.none}",
+          "fontFeatureSettings": "'tnum' on, 'cv02' on",
+          "$description": "Tabular numerals for prominent KPI values"
+        },
+        "metric-standard": {
+          "fontFamily": "{typography.font-family.sans}",
+          "fontSize": "{typography.font-size.2xl}",
+          "fontWeight": "{typography.font-weight.semibold}",
+          "lineHeight": "{typography.line-height.tight}",
+          "fontFeatureSettings": "'tnum' on"
+        },
+        "metric-delta": {
+          "fontFamily": "{typography.font-family.sans}",
+          "fontSize": "{typography.font-size.xs}",
+          "fontWeight": "{typography.font-weight.medium}",
+          "lineHeight": "{typography.line-height.normal}",
+          "fontFeatureSettings": "'tnum' on"
+        }
+      },
+      "heading": {
+        "h1": {
+          "fontFamily": "{typography.font-family.sans}",
+          "fontSize": "{typography.font-size.3xl}",
+          "fontWeight": "{typography.font-weight.bold}",
+          "lineHeight": "{typography.line-height.tight}"
+        },
+        "h2": {
+          "fontFamily": "{typography.font-family.sans}",
+          "fontSize": "{typography.font-size.2xl}",
+          "fontWeight": "{typography.font-weight.semibold}",
+          "lineHeight": "{typography.line-height.snug}"
+        },
+        "h3": {
+          "fontFamily": "{typography.font-family.sans}",
+          "fontSize": "{typography.font-size.xl}",
+          "fontWeight": "{typography.font-weight.semibold}",
+          "lineHeight": "{typography.line-height.snug}"
+        },
+        "h4": {
+          "fontFamily": "{typography.font-family.sans}",
+          "fontSize": "{typography.font-size.lg}",
+          "fontWeight": "{typography.font-weight.medium}",
+          "lineHeight": "{typography.line-height.normal}"
+        }
+      },
+      "body": {
+        "large": {
+          "fontFamily": "{typography.font-family.sans}",
+          "fontSize": "{typography.font-size.base}",
+          "fontWeight": "{typography.font-weight.regular}",
+          "lineHeight": "{typography.line-height.normal}"
+        },
+        "default": {
+          "fontFamily": "{typography.font-family.sans}",
+          "fontSize": "{typography.font-size.sm}",
+          "fontWeight": "{typography.font-weight.regular}",
+          "lineHeight": "{typography.line-height.normal}"
+        },
+        "dense": {
+          "fontFamily": "{typography.font-family.sans}",
+          "fontSize": "{typography.font-size.xs}",
+          "fontWeight": "{typography.font-weight.regular}",
+          "lineHeight": "{typography.line-height.snug}",
+          "$description": "Compact data table cells & dense metadata"
+        }
+      },
+      "code": {
+        "inline": {
+          "fontFamily": "{typography.font-family.mono}",
+          "fontSize": "{typography.font-size.xs}",
+          "fontWeight": "{typography.font-weight.regular}"
+        },
+        "block": {
+          "fontFamily": "{typography.font-family.mono}",
+          "fontSize": "{typography.font-size.sm}",
+          "lineHeight": "{typography.line-height.relaxed}"
+        },
+        "reasoning": {
+          "fontFamily": "{typography.font-family.mono}",
+          "fontSize": "{typography.font-size.xs}",
+          "lineHeight": "{typography.line-height.normal}",
+          "$description": "AI model reasoning steps & chain of thought"
+        }
+      }
+    }
+  }
+}
+

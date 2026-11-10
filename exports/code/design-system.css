@@ -1,0 +1,391 @@
+/**
+ * Enterprise Design System - Generated CSS Tokens
+ * Specification: W3C Design Tokens Community Group (DTCG)
+ */
+
+:root {
+  /* ==========================================================================
+     Tier 1: Primitives (Palettes, Typography Scales, Spacing, Radii, Shadows)
+     ========================================================================== */
+  --color-brand-placeholder-primary-50: #EFF6FF;
+  --color-brand-placeholder-primary-100: #DBEAFE;
+  --color-brand-placeholder-primary-200: #BFDBFE;
+  --color-brand-placeholder-primary-300: #93C5FD;
+  --color-brand-placeholder-primary-400: #60A5FA;
+  --color-brand-placeholder-primary-500: #3B82F6;
+  --color-brand-placeholder-primary-600: #2563EB;
+  --color-brand-placeholder-primary-700: #1D4ED8;
+  --color-brand-placeholder-primary-800: #1E40AF;
+  --color-brand-placeholder-primary-900: #1E3A8A;
+  --color-brand-placeholder-primary-950: #172554;
+  --color-brand-placeholder-secondary-50: #F5F3FF;
+  --color-brand-placeholder-secondary-100: #EDE9FE;
+  --color-brand-placeholder-secondary-500: #8B5CF6;
+  --color-brand-placeholder-secondary-700: #6D28D9;
+  --color-brand-placeholder-secondary-900: #4C1D95;
+  --color-neutral-0: #FFFFFF;
+  --color-neutral-50: #F8FAFC;
+  --color-neutral-100: #F1F5F9;
+  --color-neutral-200: #E2E8F0;
+  --color-neutral-300: #CBD5E1;
+  --color-neutral-400: #94A3B8;
+  --color-neutral-500: #64748B;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1E293B;
+  --color-neutral-900: #0F172A;
+  --color-neutral-950: #020617;
+  --color-neutral-1000: #000000;
+  --color-status-success-light: #ECFDF5;
+  --color-status-success-border: #A7F3D0;
+  --color-status-success-base: #10B981;
+  --color-status-success-dark: #065F46;
+  --color-status-warning-light: #FFFBEB;
+  --color-status-warning-border: #FDE68A;
+  --color-status-warning-base: #F59E0B;
+  --color-status-warning-dark: #92400E;
+  --color-status-danger-light: #FEF2F2;
+  --color-status-danger-border: #FECACA;
+  --color-status-danger-base: #EF4444;
+  --color-status-danger-dark: #991B1B;
+  --color-status-info-light: #F0F9FF;
+  --color-status-info-border: #BAE6FD;
+  --color-status-info-base: #0EA5E9;
+  --color-status-info-dark: #075985;
+  --color-ai-special-accent-primary: #7C3AED;
+  --color-ai-special-accent-secondary: #EC4899;
+  --color-ai-special-accent-cyan: #06B6D4;
+  --color-ai-special-glow-ambient: rgba(124, 58, 237, 0.15);
+  --color-ai-special-glow-active: rgba(124, 58, 237, 0.35);
+  --color-ai-special-surface-shimmer: rgba(255, 255, 255, 0.4);
+  --color-chart-palette-series-1: #2563EB;
+  --color-chart-palette-series-2: #7C3AED;
+  --color-chart-palette-series-3: #0D9488;
+  --color-chart-palette-series-4: #F59E0B;
+  --color-chart-palette-series-5: #EC4899;
+  --color-chart-palette-series-6: #06B6D4;
+  --color-chart-palette-series-7: #84CC16;
+  --color-chart-palette-series-8: #64748B;
+  --typography-font-family-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --typography-font-family-display: system-ui, -apple-system, sans-serif;
+  --typography-font-family-mono: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', Menlo, Monaco, Consolas, monospace;
+  --typography-font-size-2xs: 10px;
+  --typography-font-size-xs: 12px;
+  --typography-font-size-sm: 14px;
+  --typography-font-size-base: 16px;
+  --typography-font-size-lg: 18px;
+  --typography-font-size-xl: 20px;
+  --typography-font-size-2xl: 24px;
+  --typography-font-size-3xl: 30px;
+  --typography-font-size-4xl: 36px;
+  --typography-font-size-5xl: 48px;
+  --typography-font-weight-regular: 400;
+  --typography-font-weight-medium: 500;
+  --typography-font-weight-semibold: 600;
+  --typography-font-weight-bold: 700;
+  --typography-line-height-none: 1;
+  --typography-line-height-tight: 1.25;
+  --typography-line-height-snug: 1.375;
+  --typography-line-height-normal: 1.5;
+  --typography-line-height-relaxed: 1.625;
+  --typography-line-height-loose: 2;
+  --typography-letter-spacing-tighter: -0.05em;
+  --typography-letter-spacing-tight: -0.025em;
+  --typography-letter-spacing-normal: 0em;
+  --typography-letter-spacing-wide: 0.025em;
+  --typography-letter-spacing-wider: 0.05em;
+  --spacing-0: 0px;
+  --spacing-1: 2px;
+  --spacing-2: 4px;
+  --spacing-3: 6px;
+  --spacing-4: 8px;
+  --spacing-6: 12px;
+  --spacing-8: 16px;
+  --spacing-10: 20px;
+  --spacing-12: 24px;
+  --spacing-16: 32px;
+  --spacing-20: 40px;
+  --spacing-24: 48px;
+  --spacing-32: 64px;
+  --spacing-40: 80px;
+  --spacing-48: 96px;
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-full: 9999px;
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  --shadow-ai-glow-subtle: 0 0 15px 2px rgba(124, 58, 237, 0.18);
+  --shadow-ai-glow-focused: 0 0 25px 4px rgba(124, 58, 237, 0.32);
+  --motion-duration-instant: 50ms;
+  --motion-duration-fast: 150ms;
+  --motion-duration-normal: 250ms;
+  --motion-duration-slow: 400ms;
+  --motion-duration-ai-streaming-cursor: 800ms;
+  --motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --motion-easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --motion-easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --z-index-deep: -1;
+  --z-index-base: 0;
+  --z-index-docked: 10;
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1100;
+  --z-index-banner: 1200;
+  --z-index-drawer: 1300;
+  --z-index-modal: 1400;
+  --z-index-popover: 1500;
+  --z-index-toast: 1600;
+  --z-index-tooltip: 1700;
+
+  /* ==========================================================================
+     Tier 2: Semantic System Tokens (Light Mode Default)
+     ========================================================================== */
+  --sys-color-surface-canvas: #F8FAFC;
+  --sys-color-surface-card: #FFFFFF;
+  --sys-color-surface-elevated: #FFFFFF;
+  --sys-color-surface-sunken: #F1F5F9;
+  --sys-color-surface-inverse: #0F172A;
+  --sys-color-surface-ai-subtle: #F5F3FF;
+  --sys-color-surface-ai-highlight: rgba(124, 58, 237, 0.08);
+  --sys-color-text-primary: #0F172A;
+  --sys-color-text-secondary: #475569;
+  --sys-color-text-tertiary: #94A3B8;
+  --sys-color-text-inverse: #FFFFFF;
+  --sys-color-text-brand: #2563EB;
+  --sys-color-text-ai-accent: #7C3AED;
+  --sys-color-text-code: #1E293B;
+  --sys-color-border-subtle: #E2E8F0;
+  --sys-color-border-default: #CBD5E1;
+  --sys-color-border-strong: #94A3B8;
+  --sys-color-border-focus: #3B82F6;
+  --sys-color-border-ai: #7C3AED;
+  --sys-color-interactive-primary-default: #2563EB;
+  --sys-color-interactive-primary-hover: #1D4ED8;
+  --sys-color-interactive-primary-active: #1E40AF;
+  --sys-color-interactive-primary-disabled: #CBD5E1;
+  --sys-color-interactive-ai-action-default: #7C3AED;
+  --sys-color-interactive-ai-action-hover: #6D28D9;
+  --sys-color-interactive-ai-action-subtle: #F5F3FF;
+  --sys-color-status-success-surface: #ECFDF5;
+  --sys-color-status-success-border: #A7F3D0;
+  --sys-color-status-success-text: #065F46;
+  --sys-color-status-success-icon: #10B981;
+  --sys-color-status-warning-surface: #FFFBEB;
+  --sys-color-status-warning-border: #FDE68A;
+  --sys-color-status-warning-text: #92400E;
+  --sys-color-status-warning-icon: #F59E0B;
+  --sys-color-status-danger-surface: #FEF2F2;
+  --sys-color-status-danger-border: #FECACA;
+  --sys-color-status-danger-text: #991B1B;
+  --sys-color-status-danger-icon: #EF4444;
+  --sys-color-status-info-surface: #F0F9FF;
+  --sys-color-status-info-border: #BAE6FD;
+  --sys-color-status-info-text: #075985;
+  --sys-color-status-info-icon: #0EA5E9;
+
+  /* ==========================================================================
+     Tier 3: Component-Scoped Tokens & Defaults
+     ========================================================================== */
+  --component-dataTable-surface-header: #F8FAFC;
+  --component-dataTable-surface-row: #FFFFFF;
+  --component-dataTable-surface-rowZebra: #F8FAFC;
+  --component-dataTable-surface-rowHover: #F1F5F9;
+  --component-dataTable-surface-rowSelected: #EFF6FF;
+  --component-dataTable-surface-pinnedColumn: #FFFFFF;
+  --component-dataTable-border-outer: #E2E8F0;
+  --component-dataTable-border-cell: #E2E8F0;
+  --component-dataTable-border-selected: #3B82F6;
+  --component-dataTable-border-radius: 12px;
+  --component-dataTable-header-fontSize: 12px;
+  --component-dataTable-header-fontWeight: 600;
+  --component-dataTable-header-color: #475569;
+  --component-dataTable-header-sortIconSize: 14px;
+  --component-dataTable-cell-fontSize: 14px;
+  --component-dataTable-cell-color: #0F172A;
+  --component-dataTable-cell-numericFontVariant: tabular-nums;
+  --component-dataTable-pinnedDivider-shadow: 4px 0 8px -2px rgba(0, 0, 0, 0.08);
+  --component-dataTable-pagination-height: 48px;
+  --component-dataTable-pagination-borderTop: #E2E8F0;
+  --component-dataTable-pagination-fontSize: 12px;
+  --component-genAi-composer-surface: #FFFFFF;
+  --component-genAi-composer-borderDefault: #CBD5E1;
+  --component-genAi-composer-borderFocus: #7C3AED;
+  --component-genAi-composer-shadowFocus: 0 0 15px 2px rgba(124, 58, 237, 0.18);
+  --component-genAi-composer-radius: 16px;
+  --component-genAi-composer-padding: 8px;
+  --component-genAi-composer-minHeight: 56px;
+  --component-genAi-composer-maxHeight: 240px;
+  --component-genAi-chatBubble-user-surface: #F1F5F9;
+  --component-genAi-chatBubble-user-text: #0F172A;
+  --component-genAi-chatBubble-user-radius: 16px 16px 4px 16px;
+  --component-genAi-chatBubble-assistant-surface: #FFFFFF;
+  --component-genAi-chatBubble-assistant-border: #E2E8F0;
+  --component-genAi-chatBubble-assistant-text: #0F172A;
+  --component-genAi-chatBubble-assistant-radius: 16px 16px 16px 4px;
+  --component-genAi-chatBubble-assistant-aiAccentBadge: #7C3AED;
+  --component-genAi-reasoningAccordion-surface: #F8FAFC;
+  --component-genAi-reasoningAccordion-border: #E2E8F0;
+  --component-genAi-reasoningAccordion-activeBorder: #06B6D4;
+  --component-genAi-reasoningAccordion-radius: 8px;
+  --component-genAi-reasoningAccordion-text: #475569;
+  --component-genAi-reasoningAccordion-shimmerDuration: 1.5s;
+  --component-genAi-citationPill-surface: #F1F5F9;
+  --component-genAi-citationPill-surfaceHover: #F5F3FF;
+  --component-genAi-citationPill-text: #7C3AED;
+  --component-genAi-citationPill-border: #E2E8F0;
+  --component-genAi-citationPill-radius: 9999px;
+  --component-genAi-citationPill-fontSize: 10px;
+  --component-genAi-citationPill-fontWeight: 600;
+  --component-genAi-diff-addition-surface: rgba(16, 185, 129, 0.12);
+  --component-genAi-diff-addition-border: rgba(16, 185, 129, 0.35);
+  --component-genAi-diff-addition-text: #065F46;
+  --component-genAi-diff-deletion-surface: rgba(239, 68, 68, 0.12);
+  --component-genAi-diff-deletion-border: rgba(239, 68, 68, 0.35);
+  --component-genAi-diff-deletion-text: #991B1B;
+  --component-genAi-streamingCursor-color: #7C3AED;
+  --component-genAi-streamingCursor-width: 8px;
+  --component-genAi-streamingCursor-height: 15px;
+  --component-genAi-streamingCursor-radius: 2px;
+  --component-kpiCard-surface: #FFFFFF;
+  --component-kpiCard-border-color: #E2E8F0;
+  --component-kpiCard-border-width: 1px;
+  --component-kpiCard-border-radius: 12px;
+  --component-kpiCard-shadow-default: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --component-kpiCard-shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --component-kpiCard-padding-comfortable: 12px;
+  --component-kpiCard-padding-compact: 8px;
+  --component-kpiCard-eyebrow-color: #475569;
+  --component-kpiCard-eyebrow-fontSize: 12px;
+  --component-kpiCard-eyebrow-fontWeight: 500;
+  --component-kpiCard-eyebrow-textTransform: uppercase;
+  --component-kpiCard-eyebrow-letterSpacing: 0.025em;
+  --component-kpiCard-metric-color: #0F172A;
+  --component-kpiCard-metric-fontSize: 30px;
+  --component-kpiCard-metric-fontWeight: 700;
+  --component-kpiCard-metric-fontVariantNumeric: tabular-nums;
+  --component-kpiCard-delta-positive-background: #ECFDF5;
+  --component-kpiCard-delta-positive-text: #065F46;
+  --component-kpiCard-delta-positive-border: #A7F3D0;
+  --component-kpiCard-delta-negative-background: #FEF2F2;
+  --component-kpiCard-delta-negative-text: #991B1B;
+  --component-kpiCard-delta-negative-border: #FECACA;
+  --component-kpiCard-delta-neutral-background: #F1F5F9;
+  --component-kpiCard-delta-neutral-text: #475569;
+  --component-kpiCard-delta-neutral-border: #E2E8F0;
+  --component-kpiCard-delta-radius: 9999px;
+  --component-kpiCard-delta-paddingX: 4px;
+  --component-kpiCard-delta-paddingY: 2px;
+  --component-kpiCard-sparkline-height-laptop: 56px;
+  --component-kpiCard-sparkline-height-tablet: 48px;
+  --component-kpiCard-sparkline-height-mobile: 40px;
+  --component-kpiCard-sparkline-strokeWidth: 2px;
+  --component-kpiCard-sparkline-fillOpacity: 0.15;
+
+  /* ==========================================================================
+     Density Preset Defaults (Comfortable)
+     ========================================================================== */
+  --table-row-height: var(--responsive-density-comfortable-tableRowHeight, 44px);
+  --table-cell-padding-x: var(--responsive-density-comfortable-tableCellPaddingX, 16px);
+  --table-cell-padding-y: var(--responsive-density-comfortable-tableCellPaddingY, 10px);
+  --input-height: var(--responsive-density-comfortable-inputHeight, 40px);
+  --button-height: var(--responsive-density-comfortable-buttonHeight, 40px);
+  --kpi-padding: var(--responsive-density-comfortable-kpiPadding, 20px);
+}
+
+/* ==========================================================================
+   Dark Theme Token Overrides
+   ========================================================================== */
+[data-theme="dark"] {
+  --sys-color-surface-canvas: var(--color-neutral-900, #0F172A);
+  --sys-color-surface-card: var(--color-neutral-800, #1E293B);
+  --sys-color-surface-elevated: var(--color-neutral-800, #1E293B);
+  --sys-color-surface-sunken: var(--color-neutral-950, #020617);
+  --sys-color-surface-ai-subtle: rgba(124, 58, 237, 0.12);
+  --sys-color-surface-ai-highlight: rgba(124, 58, 237, 0.22);
+
+  --sys-color-text-primary: var(--color-neutral-50, #F8FAFC);
+  --sys-color-text-secondary: var(--color-neutral-400, #94A3B8);
+  --sys-color-text-tertiary: var(--color-neutral-500, #64748B);
+  --sys-color-text-inverse: var(--color-neutral-900, #0F172A);
+  --sys-color-text-code: var(--color-neutral-200, #E2E8F0);
+
+  --sys-color-border-subtle: var(--color-neutral-700, #334155);
+  --sys-color-border-default: var(--color-neutral-600, #475569);
+  --sys-color-border-strong: var(--color-neutral-500, #64748B);
+
+  --component-kpiCard-surface: var(--sys-color-surface-card);
+  --component-kpiCard-border-color: var(--sys-color-border-subtle);
+  --component-dataTable-surface-header: var(--color-neutral-900, #0F172A);
+  --component-dataTable-surface-row: var(--color-neutral-800, #1E293B);
+  --component-dataTable-surface-rowHover: var(--color-neutral-700, #334155);
+  --component-dataTable-surface-rowSelected: rgba(59, 130, 246, 0.15);
+  --component-genAi-composer-surface: var(--color-neutral-800, #1E293B);
+  --component-genAi-chatBubble-user-surface: var(--color-neutral-700, #334155);
+  --component-genAi-chatBubble-assistant-surface: var(--color-neutral-800, #1E293B);
+  --component-genAi-reasoningAccordion-surface: var(--color-neutral-900, #0F172A);
+}
+
+/* ==========================================================================
+   Density Mode Overrides
+   ========================================================================== */
+[data-density="compact"] {
+  --table-row-height: var(--responsive-density-compact-tableRowHeight, 32px);
+  --table-cell-padding-x: var(--responsive-density-compact-tableCellPaddingX, 8px);
+  --table-cell-padding-y: var(--responsive-density-compact-tableCellPaddingY, 4px);
+  --input-height: var(--responsive-density-compact-inputHeight, 32px);
+  --button-height: var(--responsive-density-compact-buttonHeight, 32px);
+  --kpi-padding: var(--responsive-density-compact-kpiPadding, 12px);
+}
+
+[data-density="spacious"] {
+  --table-row-height: var(--responsive-density-spacious-tableRowHeight, 56px);
+  --table-cell-padding-x: var(--responsive-density-spacious-tableCellPaddingX, 20px);
+  --table-cell-padding-y: var(--responsive-density-spacious-tableCellPaddingY, 16px);
+  --input-height: var(--responsive-density-spacious-inputHeight, 48px);
+  --button-height: var(--responsive-density-spacious-buttonHeight, 48px);
+  --kpi-padding: var(--responsive-density-spacious-kpiPadding, 24px);
+}
+
+/* ==========================================================================
+   Base Utilities & Standard Classes
+   ========================================================================== */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" on;
+}
+
+@keyframes ai-cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes ai-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.ai-cursor-pulse {
+  display: inline-block;
+  width: var(--component-genAi-streamingCursor-width, 8px);
+  height: var(--component-genAi-streamingCursor-height, 15px);
+  background: var(--component-genAi-streamingCursor-color, #7C3AED);
+  border-radius: var(--component-genAi-streamingCursor-radius, 2px);
+  animation: ai-cursor-blink 0.8s infinite;
+  vertical-align: middle;
+  margin-left: 3px;
+}
+
+.ai-shimmer-border {
+  background: linear-gradient(90deg, #7C3AED, #06B6D4, #EC4899, #7C3AED);
+  background-size: 300% 100%;
+  animation: ai-shimmer 3s linear infinite;
+}

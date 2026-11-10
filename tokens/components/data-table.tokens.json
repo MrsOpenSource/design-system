@@ -1,0 +1,41 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "component": {
+    "dataTable": {
+      "surface": {
+        "header": { "$value": "{color.neutral.50}", "$type": "color" },
+        "row": { "$value": "{color.neutral.0}", "$type": "color" },
+        "rowZebra": { "$value": "{color.neutral.50}", "$type": "color" },
+        "rowHover": { "$value": "{color.neutral.100}", "$type": "color" },
+        "rowSelected": { "$value": "{color.brand.placeholder-primary.50}", "$type": "color" },
+        "pinnedColumn": { "$value": "{color.neutral.0}", "$type": "color" }
+      },
+      "border": {
+        "outer": { "$value": "{sys.color.border.subtle}", "$type": "color" },
+        "cell": { "$value": "{sys.color.border.subtle}", "$type": "color" },
+        "selected": { "$value": "{sys.color.border.focus}", "$type": "color" },
+        "radius": { "$value": "{radius.xl}", "$type": "dimension" }
+      },
+      "header": {
+        "fontSize": { "$value": "{typography.font-size.xs}", "$type": "dimension" },
+        "fontWeight": { "$value": "{typography.font-weight.semibold}", "$type": "fontWeight" },
+        "color": { "$value": "{sys.color.text.secondary}", "$type": "color" },
+        "sortIconSize": { "$value": "14px", "$type": "dimension" }
+      },
+      "cell": {
+        "fontSize": { "$value": "{typography.font-size.sm}", "$type": "dimension" },
+        "color": { "$value": "{sys.color.text.primary}", "$type": "color" },
+        "numericFontVariant": { "$value": "tabular-nums", "$type": "string" }
+      },
+      "pinnedDivider": {
+        "shadow": { "$value": "4px 0 8px -2px rgba(0, 0, 0, 0.08)", "$type": "shadow" }
+      },
+      "pagination": {
+        "height": { "$value": "48px", "$type": "dimension" },
+        "borderTop": { "$value": "{sys.color.border.subtle}", "$type": "color" },
+        "fontSize": { "$value": "{typography.font-size.xs}", "$type": "dimension" }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "component": {
+    "tabs": {
+      "underline": {
+        "active": {
+          "text": { "$value": "{sys.color.brand.primary}", "$type": "color" },
+          "border": { "$value": "{sys.color.brand.primary}", "$type": "color" }
+        },
+        "inactive": {
+          "text": { "$value": "{sys.color.text.secondary}", "$type": "color" },
+          "border": { "$value": "transparent", "$type": "color" }
+        }
+      },
+      "segmented": {
+        "surface": { "$value": "{sys.color.surface.sunken}", "$type": "color" },
+        "radius": { "$value": "{radius.lg}", "$type": "dimension" },
+        "active": {
+          "background": { "$value": "{sys.color.surface.card}", "$type": "color" },
+          "text": { "$value": "{sys.color.text.primary}", "$type": "color" },
+          "shadow": { "$value": "{shadow.sm}", "$type": "shadow" }
+        },
+        "inactive": {
+          "background": { "$value": "transparent", "$type": "color" },
+          "text": { "$value": "{sys.color.text.secondary}", "$type": "color" }
+        }
+      }
+    }
+  }
+}
+

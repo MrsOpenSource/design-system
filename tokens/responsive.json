@@ -1,0 +1,66 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "responsive": {
+    "breakpoint": {
+      "mobile": {
+        "min": { "$value": "320px", "$type": "dimension" },
+        "max": { "$value": "767px", "$type": "dimension" },
+        "columns": { "$value": 4, "$type": "number" },
+        "margin": { "$value": "16px", "$type": "dimension" },
+        "gutter": { "$value": "12px", "$type": "dimension" },
+        "minTapTarget": { "$value": "44px", "$type": "dimension" }
+      },
+      "tablet": {
+        "min": { "$value": "768px", "$type": "dimension" },
+        "max": { "$value": "1023px", "$type": "dimension" },
+        "columns": { "$value": 8, "$type": "number" },
+        "margin": { "$value": "24px", "$type": "dimension" },
+        "gutter": { "$value": "16px", "$type": "dimension" },
+        "minTapTarget": { "$value": "44px", "$type": "dimension" }
+      },
+      "laptop": {
+        "min": { "$value": "1024px", "$type": "dimension" },
+        "max": { "$value": "1439px", "$type": "dimension" },
+        "columns": { "$value": 12, "$type": "number" },
+        "margin": { "$value": "32px", "$type": "dimension" },
+        "gutter": { "$value": "20px", "$type": "dimension" },
+        "minTapTarget": { "$value": "32px", "$type": "dimension" }
+      },
+      "desktop-wide": {
+        "min": { "$value": "1440px", "$type": "dimension" },
+        "columns": { "$value": 12, "$type": "number" },
+        "margin": { "$value": "40px", "$type": "dimension" },
+        "gutter": { "$value": "24px", "$type": "dimension" },
+        "maxContainerWidth": { "$value": "1600px", "$type": "dimension" },
+        "minTapTarget": { "$value": "32px", "$type": "dimension" }
+      }
+    },
+    "density": {
+      "compact": {
+        "tableRowHeight": { "$value": "32px", "$type": "dimension" },
+        "tableCellPaddingX": { "$value": "8px", "$type": "dimension" },
+        "tableCellPaddingY": { "$value": "4px", "$type": "dimension" },
+        "inputHeight": { "$value": "32px", "$type": "dimension" },
+        "buttonHeight": { "$value": "32px", "$type": "dimension" },
+        "kpiPadding": { "$value": "12px", "$type": "dimension" }
+      },
+      "comfortable": {
+        "tableRowHeight": { "$value": "44px", "$type": "dimension" },
+        "tableCellPaddingX": { "$value": "16px", "$type": "dimension" },
+        "tableCellPaddingY": { "$value": "10px", "$type": "dimension" },
+        "inputHeight": { "$value": "40px", "$type": "dimension" },
+        "buttonHeight": { "$value": "40px", "$type": "dimension" },
+        "kpiPadding": { "$value": "20px", "$type": "dimension" }
+      },
+      "spacious": {
+        "tableRowHeight": { "$value": "56px", "$type": "dimension" },
+        "tableCellPaddingX": { "$value": "20px", "$type": "dimension" },
+        "tableCellPaddingY": { "$value": "16px", "$type": "dimension" },
+        "inputHeight": { "$value": "48px", "$type": "dimension" },
+        "buttonHeight": { "$value": "48px", "$type": "dimension" },
+        "kpiPadding": { "$value": "24px", "$type": "dimension" }
+      }
+    }
+  }
+}
+

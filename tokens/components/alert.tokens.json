@@ -1,0 +1,33 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "component": {
+    "alert": {
+      "radius": { "$value": "{radius.xl}", "$type": "dimension" },
+      "borderWidth": { "$value": "1px", "$type": "dimension" },
+      "padding": { "$value": "{spacing.4}", "$type": "dimension" },
+      "variants": {
+        "info": {
+          "background": { "$value": "{sys.color.status.info.surface}", "$type": "color" },
+          "border": { "$value": "{sys.color.status.info.border}", "$type": "color" },
+          "text": { "$value": "{sys.color.status.info.text}", "$type": "color" }
+        },
+        "success": {
+          "background": { "$value": "{sys.color.status.success.surface}", "$type": "color" },
+          "border": { "$value": "{sys.color.status.success.border}", "$type": "color" },
+          "text": { "$value": "{sys.color.status.success.text}", "$type": "color" }
+        },
+        "warning": {
+          "background": { "$value": "{sys.color.status.warning.surface}", "$type": "color" },
+          "border": { "$value": "{sys.color.status.warning.border}", "$type": "color" },
+          "text": { "$value": "{sys.color.status.warning.text}", "$type": "color" }
+        },
+        "danger": {
+          "background": { "$value": "{sys.color.status.danger.surface}", "$type": "color" },
+          "border": { "$value": "{sys.color.status.danger.border}", "$type": "color" },
+          "text": { "$value": "{sys.color.status.danger.text}", "$type": "color" }
+        }
+      }
+    }
+  }
+}
+

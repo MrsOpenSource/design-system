@@ -1,0 +1,50 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "component": {
+    "chip": {
+      "radius": { "$value": "{radius.full}", "$type": "dimension" },
+      "height": {
+        "sm": { "$value": "26px", "$type": "dimension" },
+        "md": { "$value": "32px", "$type": "dimension" }
+      },
+      "font": {
+        "size": { "$value": "{typography.font-size.xs}", "$type": "dimension" },
+        "weight": { "$value": "{typography.font-weight.medium}", "$type": "fontWeight" }
+      },
+      "padding": {
+        "x": { "$value": "{spacing.3}", "$type": "dimension" },
+        "y": { "$value": "{spacing.1}", "$type": "dimension" }
+      },
+      "variants": {
+        "filter": {
+          "default": {
+            "background": { "$value": "{sys.color.surface.sunken}", "$type": "color" },
+            "text": { "$value": "{sys.color.text.secondary}", "$type": "color" },
+            "border": { "$value": "{sys.color.border.default}", "$type": "color" }
+          },
+          "active": {
+            "background": { "$value": "rgba(37, 99, 235, 0.1)", "$type": "color" },
+            "text": { "$value": "{sys.color.brand.primary}", "$type": "color" },
+            "border": { "$value": "{sys.color.brand.primary}", "$type": "color" }
+          }
+        },
+        "input": {
+          "background": { "$value": "{sys.color.surface.card}", "$type": "color" },
+          "text": { "$value": "{sys.color.text.primary}", "$type": "color" },
+          "border": { "$value": "{sys.color.border.default}", "$type": "color" }
+        },
+        "suggestion": {
+          "background": { "$value": "{sys.color.surface.card}", "$type": "color" },
+          "text": { "$value": "{sys.color.text.secondary}", "$type": "color" },
+          "border": { "$value": "{sys.color.border.subtle}", "$type": "color" }
+        },
+        "assist": {
+          "background": { "$value": "rgba(124, 58, 237, 0.08)", "$type": "color" },
+          "text": { "$value": "{color.ai-special.accent-primary}", "$type": "color" },
+          "border": { "$value": "rgba(124, 58, 237, 0.25)", "$type": "color" }
+        }
+      }
+    }
+  }
+}
+

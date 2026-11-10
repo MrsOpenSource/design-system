@@ -1,0 +1,20 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "component": {
+    "modal": {
+      "backdrop": {
+        "color": { "$value": "rgba(15, 23, 42, 0.6)", "$type": "color" },
+        "blur": { "$value": "4px", "$type": "dimension" }
+      },
+      "surface": { "$value": "{sys.color.surface.card}", "$type": "color" },
+      "border": {
+        "color": { "$value": "{sys.color.border.default}", "$type": "color" },
+        "width": { "$value": "1px", "$type": "dimension" },
+        "radius": { "$value": "{radius.2xl}", "$type": "dimension" }
+      },
+      "shadow": { "$value": "{shadow.xl}", "$type": "shadow" },
+      "padding": { "$value": "{spacing.6}", "$type": "dimension" }
+    }
+  }
+}
+
