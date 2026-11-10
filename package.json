@@ -1,6 +1,6 @@
 {
   "name": "@hsb_design/design-system",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Multi-device enterprise design system framework for analytical dashboards and Gen AI applications",
   "type": "module",
   "bin": {
