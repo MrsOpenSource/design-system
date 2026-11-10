@@ -93,3 +93,4 @@ figma.connect(AdaptiveLayout, 'https://figma.com/design/:fileKey/:fileName?node-
     </AdaptiveLayout>
   )
 });
+

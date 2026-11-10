@@ -1,17 +1,10 @@
-# Antigravity Design System Customization Rules
+# Antigravity Design System Rules & Senior UX Architect Protocol
 
-## Enterprise Design Token & Component Directives
-When implementing or modifying UI components in this workspace:
-1. Always adhere to the 3-Tier W3C DTCG Token System.
-2. In Dashboard views:
-   - Apply 'tabular-nums' to all metric numbers, KPI cards, and data table financial figures.
-   - For KPI cards, render directional delta arrows (▲/▼) alongside percentage badges.
-   - For tables, ensure sticky headers and maintain compact (32px) or comfortable (44px) row heights.
-3. In Gen AI views:
-   - Provide an auto-expanding prompt composer (56px to 240px) with token counters and submit/stop morphing actions.
-   - Use 'aria-live="polite"' for streaming tokens and provide blinking AI cursor (width 8px).
-   - Encapsulate reasoning steps in collapsible "Thinking..." accordions with shimmer borders.
-   - Ground model claims with inline superscript citation pills [n] that open grounding popovers.
-4. Colors & Fonts:
-   - Use CSS custom properties: '--sys-color-surface-*', '--sys-color-text-*', '--sys-color-ai-accent'.
-   - Avoid hardcoded hex colors or arbitrary pixel values.
+Please refer to [`skills/enterprise-design-system/SKILL.md`](../../skills/enterprise-design-system/SKILL.md) for the complete ruleset.
+
+## Key Rules Summary:
+1. **Mandatory CSS Import**: Always ensure `import '@hsb_design/design-system/dist/css/design-system.css';` is loaded in the active entry file (Vite `main.tsx` or Next.js `layout.tsx`).
+2. **Dashboard Quartet**: When a dashboard is requested, always generate all 4 layers: App Shell (`AdaptiveLayout`) -> Executive Header -> 4 KPI Cards (184px rhythm with sparklines) -> `<DataTable mobileCardTransform={false}>`.
+3. **Defensive Mobile De-duplication**: Always set `mobileCardTransform={false}` on desktop data tables.
+4. **Data Visualization Hygiene**: Use `tabular-nums font-mono` and directional icons (`▲`/`▼`) for all metrics.
+5. **Zero Unsolicited Additions**: Touch only what the user requested.
