@@ -138,7 +138,74 @@ src/components/
 
 ---
 
-### 4. Code & Figma Review Checklist
+### 4. Figma Make ("Make Designs") & Figma AI Integration
+
+Figma's generative AI feature—**"Make Designs" (Figma Make)**—can generate complete screens directly from text prompts. By default, Figma Make outputs generic, untokenized vector rectangles. However, by connecting your published library and tokens from `@hsb_design/design-system`, you can force Figma Make to **exclusively use your 112 components and Figma Variables**.
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       FIGMA MAKE ("MAKE DESIGNS") WORKFLOW                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  1. EXPORT TOKENS FROM CLI                                                  │
+│     `npx @hsb_design/design-system export --format figma`                   │
+│     └── Generates: exports/figma/tokens-studio.json                         │
+│                                                                             │
+│  2. IMPORT TO FIGMA VARIABLES                                               │
+│     Open Figma -> Plugins -> "Tokens Studio for Figma" -> Load JSON         │
+│     Click "Export to Figma Variables" -> Generates Color/Radius/Spacing     │
+│                                                                             │
+│  3. PUBLISH AS FIGMA TEAM LIBRARY                                           │
+│     Publish file to Team Assets -> Components & Variables now available    │
+│                                                                             │
+│  4. PROMPT FIGMA MAKE ("MAKE DESIGNS")                                      │
+│     In Figma AI modal: Select "Use assets from: [Your Team Library]"       │
+│     Prompt: "Create an executive churn dashboard with 4 KPI cards & table"  │
+│     └── Figma Make snaps your exact 184px KPI cards, tables & buttons!      │
+│                                                                             │
+│  5. FIGMA DEV MODE & CODE CONNECT                                           │
+│     Developers click any component in Dev Mode ->                           │
+│     Shows: `import { KpiCard } from '@hsb_design/design-system'`            │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### 4.1 Figma Make Prompt Recipes
+
+When prompting Figma Make with your library enabled, use these high-precision recipes:
+
+* **Executive Dashboard Prompt**:
+  > *"Make an enterprise executive dashboard using our team library. Include 4 KPI metric cards across the top (ARR, Users, SLA, Invocations), a date range segmented control, and a responsive data table. Bind colors to our semantic brand variables and maintain 184px KPI height rhythm."*
+
+* **Gen AI Copilot Workspace Prompt**:
+  > *"Make an AI assistant workspace layout using our team library. Include an AdaptiveLayout app shell, a persistent sidebar, a central conversational stream with a ReasoningAccordion disclosure, an inline diff viewer, and a bottom docked PromptComposer with context chips."*
+
+* **Multi-Device Responsive Breakpoint Frames**:
+  > *"Make the mobile viewport adaptation (<600px) of our analytics screen using our team library components: collapse the persistent sidebar into a BottomNavigation bar, and transform the multi-column data table into stacked card list items."*
+
+---
+
+### 5. Figma Code Connect Integration
+
+Figma Code Connect connects your Figma canvas directly to production React code in Dev Mode. 
+
+A pre-configured Code Connect mapping file is provided at [`exports/figma/code-connect.figma.tsx`](file:///c:/Users/user/Desktop/Influencer/Design%20System/exports/figma/code-connect.figma.tsx):
+
+```bash
+# 1. Install Figma Code Connect CLI
+npm install -g @figma/code-connect
+
+# 2. Publish code connection to your Figma library file
+npx figma connect publish exports/figma/code-connect.figma.tsx
+```
+
+Once published, clicking any component in Figma Dev Mode displays:
+- The exact TypeScript import from `@hsb_design/design-system`.
+- Live editable prop values synchronized with Figma component properties (e.g. `variant="primary"`, `dense={true}`).
+- Direct links back to the component source on GitHub.
+
+---
+
+### 6. Code & Figma Review Checklist
 
 Before releasing any new component or view into production:
 1. **Token Compliance**: No hardcoded hex values, pixel values, or font names.

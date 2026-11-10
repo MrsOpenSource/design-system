@@ -52,7 +52,7 @@ The repo includes a dual-studio visual canvas for interactive inspection, atom t
 - **Component Studio**: Dedicated canvas for all **112 components**. Visually adjust atomic sub-layers (padding, corner radius, borders, shadows, icons, typography) and preview the **6-state interactive matrix** (*Default, Hover, Active/Pressed, Focus, Disabled, Loading*).
 - **1-Click Codebase Sync**: Click **Save as Base Component** to persist visual atom edits into `tokens/component-customizations.json` and bake them directly into the source code.
 
-### 2. Multi-Platform Design Handoff
+### 2. Multi-Platform Design Handoff & Figma Make Integration
 Export token distributions and layout structures for your design tools:
 ```bash
 # Export all targets (Figma Tokens Studio, Lovable, CSS)
@@ -62,8 +62,19 @@ node bin/cli.js export
 node bin/cli.js export --target ./figma-export --format figma
 ```
 Outputs:
-- `exports/figma/tokens-studio.json`: Import into the Figma Tokens Studio plugin.
-- `exports/figma/components-layout.json`: Standardized component frames and responsive geometry.
+- `exports/figma/tokens-studio.json`: Import directly into Figma using the **Tokens Studio for Figma** plugin to generate native **Figma Variables** (Colors, Numbers for Radii/Spacing, Typography).
+- `exports/figma/components-layout.json`: Standardized component frames, auto-layout definitions, and geometry.
+- `exports/figma/code-connect.figma.tsx`: Official **Figma Code Connect** bridge linking Figma canvas nodes in Dev Mode directly to React code.
+
+#### 🌟 Using with Figma Make ("Make Designs" / Figma AI)
+When using Figma's generative AI feature **"Make Designs" (Figma Make)**, you can ensure it generates screens strictly matching your design library rather than hallucinating arbitrary shapes:
+1. **Export & Sync Variables**: Import `exports/figma/tokens-studio.json` into your Figma file and export them to **Figma Variables**.
+2. **Publish Library**: Publish your Figma file as a **Team Library** within your Figma workspace.
+3. **Select Asset Source in Figma Make**: In the Figma AI prompt modal, enable **"Use assets from: [Your Team Library]"**.
+4. **Prompt Figma Make**:
+   > *"Make an enterprise executive dashboard using our team library. Include 4 KPI metric cards across the top (ARR, Users, SLA, Invocations), a date range segmented control, and a responsive data table. Bind colors to our semantic brand variables and maintain 184px KPI height rhythm."*
+   Figma Make will snap your exact 184px KPI cards, tables, and buttons onto the canvas!
+5. **Inspect in Dev Mode**: Developers clicking on any component in Figma Dev Mode will see the live React component snippet: `import { KpiCard } from '@hsb_design/design-system'`.
 
 ### 3. Designer AI Prompts (Copy & Paste to AI)
 
