@@ -6,14 +6,37 @@
   "bin": {
     "design-system": "./bin/cli.js"
   },
-  "main": "dist/ts/tokens.ts",
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./css": "./dist/css/design-system.css",
+    "./tokens": {
+      "import": "./dist/ts/tokens.ts",
+      "types": "./dist/ts/tokens.ts"
+    },
+    "./cva": {
+      "import": "./src/core/cva.ts",
+      "types": "./src/core/cva.ts"
+    },
+    "./transforms": {
+      "import": "./src/transforms/index.ts",
+      "types": "./src/transforms/index.ts"
+    }
+  },
   "scripts": {
     "ui": "node bin/cli.js ui",
     "start": "node bin/cli.js ui",
-    "build": "node scripts/build-tokens.mjs",
+    "build": "node scripts/build-tokens.mjs && node scripts/build-package.mjs",
+    "build:package": "node scripts/build-package.mjs",
     "test": "node --test tests/**/*.test.mjs scripts/test-gap-scanner.mjs",
     "export": "node bin/cli.js export",
-    "prepublishOnly": "node scripts/build-tokens.mjs"
+    "prepublishOnly": "node scripts/build-tokens.mjs && node scripts/build-package.mjs"
   },
   "files": [
     "bin",
