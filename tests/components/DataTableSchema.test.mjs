@@ -129,3 +129,4 @@ test('DataTableSchema — Renders standalone pagination when pagination prop ena
 
   assert.ok(tableEl, 'DataTable with pagination renders');
 });
+

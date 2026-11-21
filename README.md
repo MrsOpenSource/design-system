@@ -98,6 +98,37 @@ When using Figma's generative AI feature **"Make Designs" (Figma Make)**, you ca
 npm install @hsb_design/design-system
 ```
 
+#### Package Subpath Exports & Modular Consumption:
+```tsx
+// 1. Root components (Dual ESM / CJS + DTS Types)
+import {
+  Button,
+  Card,
+  Form,
+  useForm,
+  DataTable,
+  CommandPalette,
+  Accordion,
+  Select,
+  Textarea,
+  Pagination,
+  Divider,
+  Skeleton
+} from '@hsb_design/design-system';
+
+// 2. Zero-JS Semantic CSS Token Bridge (0 KB JS overhead)
+import '@hsb_design/design-system/css';
+
+// 3. Zero-Runtime CVA Engine & Variant Utilities
+import { cva, cx } from '@hsb_design/design-system/cva';
+
+// 4. W3C DTCG Design Tokens
+import { tokens } from '@hsb_design/design-system/tokens';
+
+// 5. Automated AST Codemod Transformers
+import { transformCode } from '@hsb_design/design-system/transforms';
+```
+
 #### Scaffold the complete 5-layer library into any project:
 ```bash
 npx @hsb_design/design-system init-library ./src/design-system "AcmeCorp"
@@ -117,11 +148,16 @@ import {
   KpiCard,
   DataTable,
   Button,
+  Form,
+  useForm,
+  CommandPalette,
   PromptComposer,
   ReasoningAccordion
 } from '@hsb_design/design-system';
 
 export function AnalyticsPage() {
+  const [form] = useForm();
+
   return (
     <AdaptiveLayout activeNav="analytics">
       {/* 184px Standardized Metric Rhythm */}
@@ -134,8 +170,27 @@ export function AnalyticsPage() {
         />
       </div>
 
-      {/* Auto-degrades to thumb-friendly card list on mobile */}
-      <DataTable columns={cols} data={rows} />
+      {/* Enterprise High-Density DataTable with Column Pinning, Sorting, & Export */}
+      <DataTable
+        columns={[
+          { title: 'Customer', dataIndex: 'customer', fixed: 'left' },
+          { title: 'ARR', dataIndex: 'arr', sorter: (a, b) => a.arr - b.arr },
+          { title: 'Status', dataIndex: 'status', onFilter: (val, r) => r.status === val }
+        ]}
+        data={rows}
+        pagination={{ pageSize: 10, total: 120 }}
+      />
+
+      {/* Enterprise Schema-Driven Form */}
+      <Form form={form} onFinish={(values) => console.log(values)}>
+        <Form.Item name="email" label="Work Email" rules={[{ required: true }, { type: 'email' }]}>
+          <input className="eds-input" />
+        </Form.Item>
+        <Button type="submit">Save</Button>
+      </Form>
+
+      {/* Global Command Palette (⌘K) */}
+      <CommandPalette open={false} placeholder="Type a command or search..." />
 
       {/* Gen AI Conversational Suite */}
       <PromptComposer placeholder="Ask AI to synthesize insights..." />
@@ -153,8 +208,9 @@ export function AnalyticsPage() {
 | **`theme`** | `npx @hsb_design/design-system theme preset emerald` | Applies a brand theme preset or sets custom `--primary #hex` with auto 50–950 HSL color ramp. |
 | **`audit`** | `npx @hsb_design/design-system audit ./src --fix` | Scans codebase for design drift (hardcoded hex, missing `tabular-nums`) and automatically patches them. |
 | **`sync`** | `npx @hsb_design/design-system sync` | Bakes visual atom edits from `tokens/component-customizations.json` into source code and tokens. |
-| **`add`** | `npx @hsb_design/design-system add kpi-card --target ./src/components/ui` | Scaffolds individual components or categories (`layout`, `inputs`, `data`, `feedback`, `genai`, `all`). |
+| **`add`** | `npx @hsb_design/design-system add button --target ./src/components/ui` | Scaffolds individual components with automated CVA, types, and sister dependency resolution. |
 | **`map`** | `npx @hsb_design/design-system map ./src` | Scans legacy codebase and generates `DESIGN_SYSTEM_GAP_REPORT.md`. |
+| **`map --migrate`** | `npx @hsb_design/design-system map ./src --migrate [--dry-run]` | Runs deterministic 1:1 AST codemod transforming native HTML/legacy elements to design system components. |
 | **`spec`** | `npx @hsb_design/design-system spec ./public/spec.html "Acme"` | Generates living atomic HTML specification. |
 
 ### 4. Developer AI Prompts (Copy & Paste to Coding Agents)

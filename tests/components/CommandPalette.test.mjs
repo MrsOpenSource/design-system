@@ -112,3 +112,4 @@ test('CommandPalette.Item — Item selection & active state', () => {
   itemEl.props.onClick();
   assert.equal(selected, true, 'onSelect should be triggered on click');
 });
+

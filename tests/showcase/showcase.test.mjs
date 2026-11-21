@@ -42,3 +42,4 @@ test('Phase 9 — Showcase Contains Zero-JS Theme Toggler & CSS Inspector', () =
   assert.match(html, /data-theme="slate"|theme.*slate/i, 'Must feature Slate theme toggle');
   assert.match(html, /data-theme="genai-neon"|theme.*genai-neon/i, 'Must feature GenAI Neon theme toggle');
 });
+

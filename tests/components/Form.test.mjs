@@ -185,3 +185,4 @@ test('Form — resetFields restores initial values and clears errors', async () 
   assert.equal(form.getFieldValue('score'), 100, 'Should reset to initial score');
   assert.deepEqual(form.getFieldError('score'), [], 'Errors should be cleared');
 });
+

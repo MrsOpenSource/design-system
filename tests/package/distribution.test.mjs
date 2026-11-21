@@ -39,3 +39,4 @@ test('Phase 8 — Build Distribution Packaging Script', () => {
   assert.ok(fs.existsSync(distCjs), 'dist/cjs/index.cjs must be generated');
   assert.ok(fs.existsSync(distTypes), 'dist/types/index.d.ts must be generated');
 });
+
