@@ -385,6 +385,7 @@ function runAdd(componentName, cmdArgs) {
     'bottom-nav': ['layout/BottomNavigation.tsx'],
     'hamburger-menu': ['molecules/HamburgerMenu.tsx'],
     'tabs': ['molecules/Tabs.tsx'],
+    'command-palette': ['navigation/CommandPalette.ts', 'navigation/CommandPalette.tsx'],
     // Layer 4: Data Display & Content Components
     'kpi-card': ['dashboard/KpiCard.tsx'],
     'data-table': ['dashboard/DataTable.ts', 'dashboard/DataTable.tsx'],
@@ -409,7 +410,7 @@ function runAdd(componentName, cmdArgs) {
   };
 
   const groupMap = {
-    'layout': ['adaptive-layout', 'sidebar', 'nav-rail', 'bottom-nav', 'hamburger-menu', 'tabs', 'divider'],
+    'layout': ['adaptive-layout', 'sidebar', 'nav-rail', 'bottom-nav', 'hamburger-menu', 'tabs', 'divider', 'command-palette'],
     'inputs': ['button', 'input', 'textarea', 'switch', 'chip', 'slider', 'stepper', 'segmented-control', 'checkbox', 'radio', 'radio-group', 'select', 'form'],
     'data': ['kpi-card', 'data-table', 'pagination', 'chart', 'list-item', 'badge', 'avatar'],
     'feedback': ['adaptive-dialog', 'modal', 'bottom-sheet', 'snackbar', 'tooltip', 'alert', 'circular-progress', 'skeleton'],

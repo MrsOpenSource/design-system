@@ -43,6 +43,7 @@ export function analyzeComponentGaps(targetDir = './src') {
     'BottomNavigation': { cat: 'Navigation Systems', import: 'BottomNavigation', note: 'Mobile 3-5 destination bottom bar' },
     'HamburgerMenu': { cat: 'Navigation Systems', import: 'HamburgerMenu', note: 'Accessible responsive trigger' },
     'Accordion': { cat: 'Navigation Systems', import: 'Accordion', variants: ['outlined', 'filled', 'borderless', 'items'] },
+    'CommandPalette': { cat: 'Navigation Systems', import: 'CommandPalette', variants: ['palette', 'shortcuts', 'filter'] },
 
     // Selection & Inputs
     'Form': { cat: 'Text Inputs & Forms', import: 'Form', variants: ['vertical', 'horizontal', 'inline', 'validation', 'rules'] },

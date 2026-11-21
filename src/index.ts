@@ -34,6 +34,7 @@ export * from './components/molecules/HamburgerMenu';
 export * from './components/molecules/Tabs';
 export * from './components/molecules/DropdownMenu';
 export * from './components/molecules/Accordion';
+export * from './components/navigation/CommandPalette';
 export * from './components/layout/AdaptiveLayout';
 
 // Layer 4: Data Display & Content Components
