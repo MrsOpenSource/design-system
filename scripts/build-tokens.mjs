@@ -212,10 +212,321 @@ cssContent += `
   background-size: 300% 100%;
   animation: ai-shimmer 3s linear infinite;
 }
+
+/* ==========================================================================
+   Pure CSS Theme Presets (Zero-JS Theme Toggling)
+   ========================================================================== */
+[data-theme="emerald"] {
+  --sys-color-text-brand: #059669;
+  --sys-color-border-focus: #059669;
+  --sys-color-interactive-primary-default: #059669;
+  --sys-color-interactive-primary-hover: #047857;
+  --sys-color-interactive-primary-active: #065F46;
+  --color-brand-placeholder-primary-500: #059669;
+  --color-brand-placeholder-primary-600: #047857;
+  --color-brand-placeholder-primary-700: #065F46;
+  --color-brand-placeholder-secondary-500: #0D9488;
+  --geometry-base-radius: 6px;
+  --radius-md: 6px;
+  --typography-font-family-sans: 'Inter', system-ui, sans-serif;
+}
+
+[data-theme="slate"],
+[data-theme="enterprise-slate"] {
+  --sys-color-text-brand: #334155;
+  --sys-color-border-focus: #334155;
+  --sys-color-interactive-primary-default: #334155;
+  --sys-color-interactive-primary-hover: #1E293B;
+  --sys-color-interactive-primary-active: #0F172A;
+  --color-brand-placeholder-primary-500: #334155;
+  --color-brand-placeholder-primary-600: #1E293B;
+  --color-brand-placeholder-secondary-500: #475569;
+  --geometry-base-radius: 4px;
+  --radius-md: 4px;
+  --typography-font-family-sans: 'Inter', system-ui, sans-serif;
+}
+
+[data-theme="genai-neon"] {
+  --sys-color-text-brand: #7C3AED;
+  --sys-color-border-focus: #7C3AED;
+  --sys-color-interactive-primary-default: #7C3AED;
+  --sys-color-interactive-primary-hover: #6D28D9;
+  --sys-color-interactive-primary-active: #5B21B6;
+  --color-brand-placeholder-primary-500: #7C3AED;
+  --color-brand-placeholder-primary-600: #6D28D9;
+  --color-brand-placeholder-secondary-500: #06B6D4;
+  --geometry-base-radius: 12px;
+  --radius-md: 12px;
+  --typography-font-family-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* ==========================================================================
+   Zero-JS Semantic Utility Classes (from daisyUI Bridge)
+   ========================================================================== */
+
+/* 1. Button (.ds-btn) */
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  font-family: var(--typography-font-family-sans, system-ui, sans-serif);
+  font-size: var(--typography-font-size-sm, 14px);
+  font-weight: 500;
+  line-height: 1;
+  border-radius: var(--geometry-base-radius, 8px);
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  background-color: var(--color-neutral-100, #F1F5F9);
+  color: var(--sys-color-text-primary, #0F172A);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ds-btn:hover {
+  background-color: var(--color-neutral-200, #E2E8F0);
+}
+
+.ds-btn:focus-visible {
+  outline: 2px solid var(--sys-color-border-focus, #3B82F6);
+  outline-offset: 2px;
+}
+
+.ds-btn:disabled,
+.ds-btn--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Button Variants */
+.ds-btn--primary,
+.ds-btn-primary {
+  background-color: var(--sys-color-interactive-primary-default, #2563EB);
+  color: #FFFFFF;
+  border-color: transparent;
+}
+.ds-btn--primary:hover,
+.ds-btn-primary:hover {
+  background-color: var(--sys-color-interactive-primary-hover, #1D4ED8);
+}
+
+.ds-btn--secondary,
+.ds-btn-secondary {
+  background-color: var(--color-brand-placeholder-secondary-500, #8B5CF6);
+  color: #FFFFFF;
+  border-color: transparent;
+}
+.ds-btn--secondary:hover,
+.ds-btn-secondary:hover {
+  background-color: var(--color-brand-placeholder-secondary-700, #6D28D9);
+}
+
+.ds-btn--outline,
+.ds-btn--outlined,
+.ds-btn-outline {
+  background-color: transparent;
+  border-color: var(--sys-color-border-default, #CBD5E1);
+  color: var(--sys-color-text-primary, #0F172A);
+}
+.ds-btn--outline:hover,
+.ds-btn--outlined:hover,
+.ds-btn-outline:hover {
+  background-color: var(--color-neutral-50, #F8FAFC);
+  border-color: var(--sys-color-border-strong, #94A3B8);
+}
+
+.ds-btn--danger,
+.ds-btn--error,
+.ds-btn-danger {
+  background-color: var(--sys-color-status-danger-icon, #EF4444);
+  color: #FFFFFF;
+  border-color: transparent;
+}
+.ds-btn--danger:hover,
+.ds-btn--error:hover,
+.ds-btn-danger:hover {
+  background-color: var(--color-status-danger-dark, #991B1B);
+}
+
+/* Button Sizes */
+.ds-btn--sm,
+.ds-btn-sm {
+  height: 32px;
+  padding: 0 12px;
+  font-size: var(--typography-font-size-xs, 12px);
+}
+
+.ds-btn--lg,
+.ds-btn-lg {
+  height: 48px;
+  padding: 0 20px;
+  font-size: var(--typography-font-size-base, 16px);
+}
+
+/* 2. Card (.ds-card) */
+.ds-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--sys-color-surface-card, #FFFFFF);
+  border: 1px solid var(--sys-color-border-subtle, #E2E8F0);
+  border-radius: var(--radius-lg, 12px);
+  padding: 20px;
+  color: var(--sys-color-text-primary, #0F172A);
+  font-family: var(--typography-font-family-sans, system-ui, sans-serif);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.ds-card--elevated {
+  border-color: transparent;
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.ds-card--outlined {
+  border-color: var(--sys-color-border-default, #CBD5E1);
+  box-shadow: none;
+}
+
+.ds-card--filled {
+  background-color: var(--sys-color-surface-sunken, #F1F5F9);
+  border-color: transparent;
+}
+
+.ds-card-header,
+.ds-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.ds-card-body,
+.ds-card__body {
+  flex: 1 1 auto;
+}
+
+.ds-card-footer,
+.ds-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 16px;
+  gap: 12px;
+}
+
+/* 3. Input (.ds-input) */
+.ds-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  font-family: var(--typography-font-family-sans, system-ui, sans-serif);
+  font-size: var(--typography-font-size-sm, 14px);
+  line-height: normal;
+  color: var(--sys-color-text-primary, #0F172A);
+  background-color: var(--sys-color-surface-canvas, #FFFFFF);
+  border: 1px solid var(--sys-color-border-default, #CBD5E1);
+  border-radius: var(--geometry-base-radius, 8px);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+
+.ds-input:focus {
+  outline: none;
+  border-color: var(--sys-color-border-focus, #3B82F6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.ds-input--filled {
+  background-color: var(--sys-color-surface-sunken, #F1F5F9);
+  border-color: transparent;
+}
+
+.ds-input--filled:focus {
+  background-color: var(--sys-color-surface-canvas, #FFFFFF);
+  border-color: var(--sys-color-border-focus, #3B82F6);
+}
+
+.ds-input--error {
+  border-color: var(--sys-color-status-danger-icon, #EF4444) !important;
+}
+
+.ds-input--error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.ds-input--sm {
+  height: 32px;
+  padding: 0 8px;
+  font-size: var(--typography-font-size-xs, 12px);
+}
+
+.ds-input--lg {
+  height: 48px;
+  padding: 0 16px;
+  font-size: var(--typography-font-size-base, 16px);
+}
+
+/* 4. Badge (.ds-badge) */
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 22px;
+  padding: 0 8px;
+  font-family: var(--typography-font-family-sans, system-ui, sans-serif);
+  font-size: var(--typography-font-size-xs, 12px);
+  font-weight: 600;
+  line-height: 1;
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid transparent;
+  background-color: var(--color-neutral-100, #F1F5F9);
+  color: var(--color-neutral-700, #334155);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.ds-badge--primary {
+  background-color: var(--color-brand-placeholder-primary-50, #EFF6FF);
+  color: var(--sys-color-interactive-primary-default, #2563EB);
+  border-color: var(--color-brand-placeholder-primary-200, #BFDBFE);
+}
+
+.ds-badge--success {
+  background-color: var(--sys-color-status-success-surface, #ECFDF5);
+  color: var(--sys-color-status-success-text, #065F46);
+  border-color: var(--sys-color-status-success-border, #A7F3D0);
+}
+
+.ds-badge--warning {
+  background-color: var(--sys-color-status-warning-surface, #FFFBEB);
+  color: var(--sys-color-status-warning-text, #92400E);
+  border-color: var(--sys-color-status-warning-border, #FDE68A);
+}
+
+.ds-badge--danger {
+  background-color: var(--sys-color-status-danger-surface, #FEF2F2);
+  color: var(--sys-color-status-danger-text, #991B1B);
+  border-color: var(--sys-color-status-danger-border, #FECACA);
+}
+
+.ds-badge--outline {
+  background-color: transparent;
+  border-color: var(--sys-color-border-default, #CBD5E1);
+  color: var(--sys-color-text-secondary, #475569);
+}
 `;
 
 fs.writeFileSync(path.join(rootDir, 'dist', 'css', 'design-system.css'), cssContent, 'utf8');
 fs.writeFileSync(path.join(rootDir, 'dist', 'css', 'tokens.css'), cssContent, 'utf8');
+if (fs.existsSync(path.join(rootDir, 'exports', 'code', 'design-system.css'))) {
+  fs.writeFileSync(path.join(rootDir, 'exports', 'code', 'design-system.css'), cssContent, 'utf8');
+}
+
 
 // 3. Generate Tailwind Preset
 const tailwindPreset = `/**

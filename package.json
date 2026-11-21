@@ -11,6 +11,7 @@
     "ui": "node bin/cli.js ui",
     "start": "node bin/cli.js ui",
     "build": "node scripts/build-tokens.mjs",
+    "test": "node --test tests/**/*.test.mjs scripts/test-gap-scanner.mjs",
     "export": "node bin/cli.js export",
     "prepublishOnly": "node scripts/build-tokens.mjs"
   },

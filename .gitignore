@@ -5,6 +5,7 @@ node_modules/
 
 # Testing and Temporary Artifacts
 test-skill-install/
+tests/fixtures/
 *.tgz
 *.log
 npm-debug.log*

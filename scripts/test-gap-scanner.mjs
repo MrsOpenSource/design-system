@@ -23,6 +23,8 @@ export function analyzeComponentGaps(targetDir = './src') {
     'Dialog': { cat: 'Containment & Surfaces', import: 'AdaptiveDialog', note: 'Adapts to Modal on desktop, BottomSheet on phone' },
     'BottomSheet': { cat: 'Containment & Surfaces', import: 'BottomSheet', note: 'Mobile swipeable drawer with touch drag bar' },
     'Drawer': { cat: 'Containment & Surfaces', import: 'Sidebar', note: 'Slide-in side sheet / modal drawer' },
+    'Divider': { cat: 'Containment & Surfaces', import: 'Divider', variants: ['fullBleed', 'inset', 'vertical', 'with-children'] },
+    'Separator': { cat: 'Containment & Surfaces', import: 'Divider', note: 'Use <Divider />' },
     
     // Communication & Feedback
     'Alert': { cat: 'Communication & Feedback', import: 'Alert', variants: ['info', 'success', 'warning', 'danger'] },
@@ -32,6 +34,7 @@ export function analyzeComponentGaps(targetDir = './src') {
     'Tooltip': { cat: 'Communication & Feedback', import: 'Tooltip', variants: ['plain', 'rich'] },
     'Progress': { cat: 'Communication & Feedback', import: 'CircularProgress', variants: ['linear', 'circular', 'indeterminate'] },
     'Spinner': { cat: 'Communication & Feedback', import: 'CircularProgress', note: 'Use <CircularProgress indeterminate />' },
+    'Skeleton': { cat: 'Communication & Feedback', import: 'Skeleton', variants: ['text', 'circular', 'rectangular', 'rounded', 'pulse', 'wave'] },
 
     // Navigation Systems
     'Tabs': { cat: 'Navigation Systems', import: 'Tabs', variants: ['primary (underline)', 'secondary (segmented pill)', 'scrollable'] },
@@ -39,10 +42,18 @@ export function analyzeComponentGaps(targetDir = './src') {
     'NavigationRail': { cat: 'Navigation Systems', import: 'NavigationRail', note: 'Compact 72px vertical tablet rail' },
     'BottomNavigation': { cat: 'Navigation Systems', import: 'BottomNavigation', note: 'Mobile 3-5 destination bottom bar' },
     'HamburgerMenu': { cat: 'Navigation Systems', import: 'HamburgerMenu', note: 'Accessible responsive trigger' },
+    'Accordion': { cat: 'Navigation Systems', import: 'Accordion', variants: ['outlined', 'filled', 'borderless', 'items'] },
 
     // Selection & Inputs
     'Input': { cat: 'Text Inputs & Forms', import: 'Input', variants: ['filled', 'outlined', 'leading-icon', 'trailing-action', 'affix', 'error'] },
     'TextField': { cat: 'Text Inputs & Forms', import: 'Input', note: 'Use <Input />' },
+    'Textarea': { cat: 'Text Inputs & Forms', import: 'Textarea', variants: ['outlined', 'filled', 'autoExpand', 'counter'] },
+    'Checkbox': { cat: 'Selection & Form Controls', import: 'Checkbox', variants: ['standard', 'indeterminate', 'with helper', 'sizes'] },
+    'Radio': { cat: 'Selection & Form Controls', import: 'Radio', note: 'Accessible single-select circle' },
+    'RadioButton': { cat: 'Selection & Form Controls', import: 'Radio', note: 'Use <Radio />' },
+    'RadioGroup': { cat: 'Selection & Form Controls', import: 'RadioGroup', variants: ['vertical', 'horizontal', 'options', 'compound'] },
+    'Select': { cat: 'Selection & Form Controls', import: 'Select', variants: ['exposed', 'options', 'listbox'] },
+    'DropdownMenu': { cat: 'Selection & Form Controls', import: 'DropdownMenu', variants: ['contextual', 'danger', 'divider'] },
     'Switch': { cat: 'Selection & Form Controls', import: 'Switch', note: 'Accessible ARIA switch' },
     'Chip': { cat: 'Selection & Form Controls', import: 'Chip', variants: ['filter', 'input', 'assist', 'suggestion'] },
     'Slider': { cat: 'Selection & Form Controls', import: 'Slider', variants: ['continuous', 'stepped', 'range'] },
@@ -51,6 +62,7 @@ export function analyzeComponentGaps(targetDir = './src') {
     // Data Display & Dashboards
     'DataTable': { cat: 'Data Display & Lists', import: 'DataTable', note: 'Dense grid with sort, filter, and pagination' },
     'Table': { cat: 'Data Display & Lists', import: 'DataTable', note: 'Use <DataTable />' },
+    'Pagination': { cat: 'Data Display & Lists', import: 'Pagination', note: 'Standalone dense tabular pagination' },
     'ListItem': { cat: 'Data Display & Lists', import: 'ListItem', variants: ['single-line', 'two-line', 'three-line', 'accordion'] },
     'Avatar': { cat: 'Data Display & Lists', import: 'Avatar', variants: ['circular', 'ai-copilot', 'stack'] },
     'KpiCard': { cat: 'Dashboard Organisms', import: 'KpiCard', note: 'Strict 184px KPI card with 48px sparkline slot' },

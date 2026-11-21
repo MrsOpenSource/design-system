@@ -79,7 +79,7 @@ switch (command) {
 
   case 'map':
   case 'gap':
-    runMap(args[1]);
+    runMap(args[1], args.slice(1));
     break;
 
   case 'skill':
@@ -336,15 +336,21 @@ function copyFolderSync(from, to) {
 function runAdd(componentName, cmdArgs) {
   printBanner();
   if (!componentName) {
-    console.error('Error: Please specify a component or group (atoms, molecules, dashboard, genai, all, button, input, badge, modal...)');
+    const msg = 'Error: Please specify a component or group (atoms, molecules, dashboard, genai, all, button, input, badge, modal...)';
+    console.log(msg);
+    console.error(msg);
     return;
   }
 
   let targetDir = path.join(process.cwd(), 'src', 'components', 'ui');
+  let overwrite = false;
+
   for (let i = 2; i < cmdArgs.length; i++) {
-    if (cmdArgs[i] === '--target' && cmdArgs[i + 1]) {
+    if ((cmdArgs[i] === '--target' || cmdArgs[i] === '-t' || cmdArgs[i] === '--dir' || cmdArgs[i] === '-d') && cmdArgs[i + 1]) {
       targetDir = path.resolve(process.cwd(), cmdArgs[i + 1]);
       i++;
+    } else if (cmdArgs[i] === '--overwrite') {
+      overwrite = true;
     }
   }
 
@@ -352,15 +358,25 @@ function runAdd(componentName, cmdArgs) {
 
   const compMap = {
     // Layer 1 & 3: Atoms & Action/Input Controls
-    'button': ['atoms/Button.tsx'],
-    'input': ['atoms/Input.tsx'],
-    'badge': ['atoms/Badge.tsx'],
+    'button': ['atoms/Button.ts', 'atoms/Button.tsx'],
+    'input': ['atoms/Input.ts', 'atoms/Input.tsx'],
+    'textarea': ['atoms/Textarea.ts', 'atoms/Textarea.tsx'],
+    'card': ['atoms/Card.ts', 'atoms/Card.tsx'],
+    'checkbox': ['atoms/Checkbox.ts', 'atoms/Checkbox.tsx'],
+    'radio': ['atoms/RadioGroup.ts', 'atoms/RadioGroup.tsx'],
+    'radio-group': ['atoms/RadioGroup.ts', 'atoms/RadioGroup.tsx'],
+    'selection-controls': ['atoms/SelectionControls.ts', 'atoms/SelectionControls.tsx'],
+    'badge': ['atoms/Badge.ts', 'atoms/Badge.tsx'],
     'avatar': ['atoms/Avatar.tsx'],
     'switch': ['atoms/Switch.tsx'],
+    'divider': ['atoms/Divider.ts', 'atoms/Divider.tsx'],
     'chip': ['inputs/Chip.tsx'],
     'slider': ['inputs/Slider.tsx'],
     'stepper': ['inputs/Stepper.tsx'],
     'segmented-control': ['inputs/SegmentedControl.tsx'],
+    'select': ['inputs/Select.ts', 'inputs/Select.tsx'],
+    'dropdown-menu': ['molecules/DropdownMenu.ts', 'molecules/DropdownMenu.tsx'],
+    'accordion': ['molecules/Accordion.ts', 'molecules/Accordion.tsx'],
     // Layer 2: Layout & Navigation Components
     'adaptive-layout': ['layout/AdaptiveLayout.tsx', 'organisms/Sidebar.tsx', 'layout/NavigationRail.tsx', 'layout/BottomNavigation.tsx', 'molecules/HamburgerMenu.tsx'],
     'sidebar': ['organisms/Sidebar.tsx'],
@@ -371,16 +387,18 @@ function runAdd(componentName, cmdArgs) {
     // Layer 4: Data Display & Content Components
     'kpi-card': ['dashboard/KpiCard.tsx'],
     'data-table': ['dashboard/DataTable.tsx'],
+    'pagination': ['data/Pagination.ts', 'data/Pagination.tsx'],
     'chart': ['dashboard/ChartContainer.tsx'],
     'list-item': ['data/ListItem.tsx'],
     // Layer 5: Feedback & Overlay Components
-    'adaptive-dialog': ['feedback/AdaptiveDialog.tsx', 'molecules/Modal.tsx', 'feedback/BottomSheet.tsx'],
-    'modal': ['molecules/Modal.tsx'],
-    'bottom-sheet': ['feedback/BottomSheet.tsx'],
+    'adaptive-dialog': ['feedback/AdaptiveDialog.ts', 'feedback/AdaptiveDialog.tsx', 'molecules/Modal.ts', 'molecules/Modal.tsx', 'feedback/BottomSheet.ts', 'feedback/BottomSheet.tsx'],
+    'modal': ['molecules/Modal.ts', 'molecules/Modal.tsx'],
+    'bottom-sheet': ['feedback/BottomSheet.ts', 'feedback/BottomSheet.tsx'],
     'snackbar': ['feedback/Snackbar.tsx'],
     'tooltip': ['feedback/Tooltip.tsx'],
     'alert': ['molecules/Alert.tsx'],
     'circular-progress': ['feedback/CircularProgress.tsx'],
+    'skeleton': ['feedback/Skeleton.ts', 'feedback/Skeleton.tsx'],
     // Layer 6: Enterprise Domain Organisms (Gen AI & Analytics)
     'prompt-composer': ['genai/PromptComposer.tsx'],
     'streaming-message': ['genai/StreamingMessage.tsx'],
@@ -390,14 +408,14 @@ function runAdd(componentName, cmdArgs) {
   };
 
   const groupMap = {
-    'layout': ['adaptive-layout', 'sidebar', 'nav-rail', 'bottom-nav', 'hamburger-menu', 'tabs'],
-    'inputs': ['button', 'input', 'switch', 'chip', 'slider', 'stepper', 'segmented-control'],
-    'data': ['kpi-card', 'data-table', 'chart', 'list-item', 'badge', 'avatar'],
-    'feedback': ['adaptive-dialog', 'modal', 'bottom-sheet', 'snackbar', 'tooltip', 'alert', 'circular-progress'],
+    'layout': ['adaptive-layout', 'sidebar', 'nav-rail', 'bottom-nav', 'hamburger-menu', 'tabs', 'divider'],
+    'inputs': ['button', 'input', 'textarea', 'switch', 'chip', 'slider', 'stepper', 'segmented-control', 'checkbox', 'radio', 'radio-group', 'select'],
+    'data': ['kpi-card', 'data-table', 'pagination', 'chart', 'list-item', 'badge', 'avatar'],
+    'feedback': ['adaptive-dialog', 'modal', 'bottom-sheet', 'snackbar', 'tooltip', 'alert', 'circular-progress', 'skeleton'],
     'dashboard': ['kpi-card', 'data-table', 'chart'],
     'genai': ['prompt-composer', 'streaming-message', 'reasoning-accordion', 'diff-viewer'],
-    'atoms': ['button', 'input', 'badge', 'avatar', 'switch', 'chip'],
-    'molecules': ['alert', 'tabs', 'modal', 'bottom-sheet', 'snackbar', 'tooltip', 'circular-progress', 'hamburger-menu'],
+    'atoms': ['button', 'input', 'textarea', 'badge', 'avatar', 'switch', 'chip', 'card', 'checkbox', 'radio', 'radio-group', 'divider'],
+    'molecules': ['alert', 'tabs', 'modal', 'bottom-sheet', 'snackbar', 'tooltip', 'circular-progress', 'hamburger-menu', 'dropdown-menu', 'accordion'],
     'all': Object.keys(compMap)
   };
 
@@ -409,34 +427,81 @@ function runAdd(componentName, cmdArgs) {
     keysToCopy = [targetKey];
   }
 
-  const toCopy = keysToCopy.map(k => compMap[k]).flat();
+  const toCopy = [...new Set(keysToCopy.map(k => compMap[k]).flat())];
 
   if (toCopy.length === 0) {
-    console.error(`Unknown component: ${componentName}.\nAvailable individual: ${Object.keys(compMap).join(', ')}\nAvailable groups: ${Object.keys(groupMap).join(', ')}`);
+    const errorMsg = `Unknown component: ${componentName}.\nAvailable individual: ${Object.keys(compMap).join(', ')}\nAvailable groups: ${Object.keys(groupMap).join(', ')}`;
+    console.log(errorMsg);
+    console.error(errorMsg);
     return;
   }
 
   // Always copy types
   const typesSrc = path.join(rootDir, 'src', 'types', 'index.ts');
   const typesDest = path.join(targetDir, 'types.ts');
-  if (fs.existsSync(typesSrc) && !fs.existsSync(typesDest)) {
+  if (fs.existsSync(typesSrc) && (!fs.existsSync(typesDest) || overwrite)) {
     fs.copyFileSync(typesSrc, typesDest);
     console.log(`✓ Created Types: ${typesDest}`);
   }
 
+  // Always copy cva core engine
+  const cvaSrc = path.join(rootDir, 'src', 'core', 'cva.ts');
+  const cvaDest = path.join(targetDir, 'cva.ts');
+  if (fs.existsSync(cvaSrc) && (!fs.existsSync(cvaDest) || overwrite)) {
+    fs.copyFileSync(cvaSrc, cvaDest);
+    console.log(`✓ Created CVA Engine: ${cvaDest}`);
+  }
+
+  let scaffoldedCount = 0;
   for (const relPath of toCopy) {
     const srcFile = path.join(rootDir, 'src', 'components', relPath);
     const destFile = path.join(targetDir, path.basename(relPath));
     if (fs.existsSync(srcFile)) {
-      let code = fs.readFileSync(srcFile, 'utf8');
-      // Normalize relative types import
-      code = code.replace(/\.\.\/\.\.\/types/g, './types');
-      fs.writeFileSync(destFile, code, 'utf8');
-      console.log(`✓ Scaffolded component: ${destFile}`);
+      if (!fs.existsSync(destFile) || overwrite) {
+        let code = fs.readFileSync(srcFile, 'utf8');
+
+        // Normalize relative CVA imports
+        code = code.replace(/['"]\.\.\/\.\.\/core\/cva(\.ts)?['"]/g, "'./cva'");
+        code = code.replace(/['"]\.\.\/core\/cva(\.ts)?['"]/g, "'./cva'");
+        code = code.replace(/['"]\.\.\/\.\.\/core['"]/g, "'./cva'");
+        code = code.replace(/['"]\.\.\/core['"]/g, "'./cva'");
+
+        // Normalize relative types import
+        code = code.replace(/['"]\.\.\/\.\.\/types(\/index)?['"]/g, "'./types'");
+        code = code.replace(/['"]\.\.\/types(\/index)?['"]/g, "'./types'");
+
+        // Normalize sister component imports for flat ejection
+        code = code.replace(/['"]\.\.\/molecules\/Modal['"]/g, "'./Modal'");
+        code = code.replace(/['"]\.\.\/feedback\/Modal['"]/g, "'./Modal'");
+        code = code.replace(/['"]\.\.\/feedback\/BottomSheet['"]/g, "'./BottomSheet'");
+        code = code.replace(/['"]\.\/BottomSheet['"]/g, "'./BottomSheet'");
+        code = code.replace(/['"]\.\.\/organisms\/Sidebar['"]/g, "'./Sidebar'");
+        code = code.replace(/['"]\.\.\/layout\/Sidebar['"]/g, "'./Sidebar'");
+        code = code.replace(/['"]\.\/Sidebar['"]/g, "'./Sidebar'");
+        code = code.replace(/['"]\.\.\/layout\/NavigationRail['"]/g, "'./NavigationRail'");
+        code = code.replace(/['"]\.\/NavigationRail['"]/g, "'./NavigationRail'");
+        code = code.replace(/['"]\.\.\/layout\/BottomNavigation['"]/g, "'./BottomNavigation'");
+        code = code.replace(/['"]\.\/BottomNavigation['"]/g, "'./BottomNavigation'");
+        code = code.replace(/['"]\.\.\/molecules\/HamburgerMenu['"]/g, "'./HamburgerMenu'");
+        code = code.replace(/['"]\.\/HamburgerMenu['"]/g, "'./HamburgerMenu'");
+        code = code.replace(/['"]\.\.\/molecules\/Tabs['"]/g, "'./Tabs'");
+        code = code.replace(/['"]\.\/Tabs['"]/g, "'./Tabs'");
+        code = code.replace(/['"]\.\.\/atoms\/Divider['"]/g, "'./Divider'");
+        code = code.replace(/['"]\.\.\/atoms\/Badge['"]/g, "'./Badge'");
+        code = code.replace(/['"]\.\.\/atoms\/Button['"]/g, "'./Button'");
+        code = code.replace(/['"]\.\.\/atoms\/Input['"]/g, "'./Input'");
+        code = code.replace(/['"]\.\.\/inputs\/Select['"]/g, "'./Select'");
+        code = code.replace(/['"]\.\.\/molecules\/DropdownMenu['"]/g, "'./DropdownMenu'");
+        code = code.replace(/['"]\.\.\/molecules\/Accordion['"]/g, "'./Accordion'");
+
+        fs.writeFileSync(destFile, code, 'utf8');
+        console.log(`✓ Scaffolded component: ${destFile}`);
+        scaffoldedCount++;
+      }
     }
   }
 
-  console.log(`\n🎉 Component scaffold complete! You can import and use them immediately.`);
+  console.log(`\n🎉 Component scaffold complete! Scaffolded ${scaffoldedCount} file(s) into ${targetDir}. You can import and use them immediately.`);
 }
 
 function runSpec(destPath = './design-system-spec.html', brandName = 'Enterprise', brandPrimary = '#0ea5e9') {
@@ -494,8 +559,108 @@ function runTokens(subArgs) {
 }
 
 
-function runMap(target = './src') {
+function runMap(target = './src', cmdArgs = []) {
   printBanner();
+
+  let targetPath = target || './src';
+  if (targetPath.startsWith('--')) {
+    targetPath = './src';
+  }
+
+  const isMigrate = cmdArgs.includes('--migrate') || cmdArgs.includes('-m');
+  const isDryRun = cmdArgs.includes('--dry-run');
+
+  let importSource = '@hsb_design/design-system';
+  for (let i = 0; i < cmdArgs.length; i++) {
+    if (cmdArgs[i] === '--import-source' && cmdArgs[i + 1]) {
+      importSource = cmdArgs[i + 1];
+      i++;
+    }
+  }
+
+  if (isMigrate) {
+    import('../src/transforms/codemod.ts').then(({ transformSource }) => {
+      const resolved = path.resolve(process.cwd(), targetPath);
+      if (!fs.existsSync(resolved)) {
+        console.error(`Target not found: ${resolved}`);
+        return;
+      }
+
+      const filesToProcess = [];
+      const stat = fs.statSync(resolved);
+      if (stat.isFile()) {
+        filesToProcess.push(resolved);
+      } else if (stat.isDirectory()) {
+        function collect(dir) {
+          const entries = fs.readdirSync(dir);
+          for (const entry of entries) {
+            if (['node_modules', '.git', 'dist', 'build', '.next', 'out'].includes(entry)) continue;
+            const full = path.join(dir, entry);
+            const st = fs.statSync(full);
+            if (st.isDirectory()) {
+              collect(full);
+            } else if (/\.(tsx|jsx|ts|js)$/.test(entry) && !entry.endsWith('.d.ts')) {
+              filesToProcess.push(full);
+            }
+          }
+        }
+        collect(resolved);
+      }
+
+      console.log(`🔄 Automated Codemod Migration Engine`);
+      console.log(`- Target: ${resolved} (${stat.isDirectory() ? 'Directory' : 'File'})`);
+      console.log(`- Import Source: ${importSource}`);
+      console.log(`- Mode: ${isDryRun ? 'Preview (DRY RUN - No disk writes)' : 'In-Place Refactoring'}`);
+      console.log(`- Total Files to Inspect: ${filesToProcess.length}\n`);
+
+      let modifiedCount = 0;
+      let totalTransformedComponents = 0;
+      const componentCounts = {};
+
+      for (const file of filesToProcess) {
+        const content = fs.readFileSync(file, 'utf8');
+        const res = transformSource(content, { importSource });
+
+        if (res.stats.totalTransformed > 0) {
+          modifiedCount++;
+          totalTransformedComponents += res.stats.totalTransformed;
+
+          for (const [comp, count] of Object.entries(res.stats)) {
+            if (comp !== 'totalTransformed') {
+              componentCounts[comp] = (componentCounts[comp] || 0) + count;
+            }
+          }
+
+          const relPath = path.relative(process.cwd(), file);
+          const compTags = res.importedComponents.map(c => `<${c}>`).join(', ');
+
+          if (isDryRun) {
+            console.log(`[DRY RUN] Would migrate ${relPath}: ${res.stats.totalTransformed} component(s) transformed (${compTags})`);
+          } else {
+            fs.writeFileSync(file, res.code, 'utf8');
+            console.log(`✓ Migrated ${relPath}: ${res.stats.totalTransformed} component(s) transformed (${compTags})`);
+          }
+        }
+      }
+
+      if (isDryRun) {
+        console.log(`\n🔍 Migration Preview (DRY RUN) Complete: ${modifiedCount} / ${filesToProcess.length} file(s) would be modified (${totalTransformedComponents} component transformations). No files were changed on disk.`);
+      } else {
+        console.log(`\n🎉 Migration Complete: Successfully transformed ${totalTransformedComponents} component(s) across ${modifiedCount} / ${filesToProcess.length} file(s)!`);
+      }
+
+      if (Object.keys(componentCounts).length > 0) {
+        console.log(`\nComponent Transformation Summary:`);
+        console.table(Object.entries(componentCounts).map(([name, count]) => ({
+          'Component': name,
+          'Transformed Instances': count,
+          'Replacement': `<${name} />`
+        })));
+      }
+    });
+    return;
+  }
+
   import('../scripts/component-gap-scanner.mjs').then(({ scanAndMapComponents }) => {
     const res = scanAndMapComponents(target);
     if (!res) return;
