@@ -137,10 +137,61 @@ flowchart LR
 
 ---
 
+### 📋 Phase 6: Enterprise Domain Models (from Ant Design)
+*Goal: High-density data schemas for tables, filters, and form validation.*
+
+- [x] **6.1 Schema-Driven Form Container & Field Validation (`Form`, `Form.Item`, `useForm`) (TDD)**
+  - Zero-bloat Form state and validation engine
+  - Rules: `required`, `min`, `max`, `pattern`, custom `validator`
+  - Auto-binding to design system controls (`Input`, `Textarea`, `Select`, `Checkbox`, `RadioGroup`) with automatic `aria-invalid`, error message rendering, and token styling
+  - Test: `tests/components/Form.test.mjs`
+
+- [x] **6.2 High-Density Table Domain Schemas (`DataTable` Column Definition Model) (TDD)**
+  - Enhanced column schemas: custom sort comparators, multi-column filters, column pinning (`left` | `right`), column visibility
+  - Integration with standalone `Pagination` component and CSV/JSON export utility
+  - Test: `tests/components/DataTableSchema.test.mjs`
+
+---
+
+### 🔍 Phase 7: Command Palette Organism (`CommandPalette` / `⌘K`)
+*Goal: Fast, accessible global keyboard-driven command navigation.*
+
+- [ ] **7.1 Accessible Keyboard-Driven Search Palette (`CommandPalette`) (TDD)**
+  - Anatomy: `CommandPalette.Root`, `CommandPalette.Input`, `CommandPalette.List`, `CommandPalette.Group`, `CommandPalette.Item`, `CommandPalette.Shortcut`, `CommandPalette.Empty`
+  - Features: Global hotkey (`Meta+K` / `Ctrl+K`), fuzzy filtering, arrow key navigation, enter action triggering, escape dismissal, and `kbd` shortcut token styling
+  - Test: `tests/components/CommandPalette.test.mjs`
+
+---
+
+### 📦 Phase 8: Production Distribution & Package Packaging
+*Goal: Dual ESM/CJS compilation and DTS type declarations for consumer npm consumption.*
+
+- [ ] **8.1 Dual ESM/CJS Compilation & DTS Generation (TDD)**
+  - Zero-bloat distribution bundler script in `scripts/build-package.mjs` generating `dist/esm`, `dist/cjs`, and `dist/types`
+  - Configure `package.json` exports map (`.`, `./css`, `./tokens`, `./cva`, `./transforms`)
+  - Integration test verifying consumer imports without broken paths or missing types
+  - Test: `tests/package/distribution.test.mjs`
+
+---
+
+### 🖥️ Phase 9: Interactive Showcase UI & Documentation Gallery
+*Goal: Rich live interactive playground for developers and design system consumers.*
+
+- [ ] **9.1 Interactive Showcase Expansion (TDD / Visual Harness)**
+  - Update `index.html` and `showcase/` with live interactive playgrounds for:
+    - Primitives (`Accordion`, `Divider`, `Skeleton`, `Pagination`, `Select`, `DropdownMenu`)
+    - Enterprise `Form` validation & `DataTable` schemas
+    - `CommandPalette` interactive test runner
+    - Zero-JS theme switcher (`emerald`, `slate`, `genai-neon`) with live CSS variable inspector
+  - Test: `tests/showcase/showcase.test.mjs`
+
+---
+
 ## 📌 4. Active Task Pointer
 
-* **Current Status**: **All 5 Architecture Roadmap Phases 100% Complete!**
-* **Total Automated Tests**: **150 / 150 Tests Passing Green (0 Failures, 0 Regressions)**
+* **Current Phase**: **Phase 7: Command Palette Organism (`CommandPalette` / `⌘K`)**
+* **Current Task**: **Task 7.1: Accessible Keyboard-Driven Search Palette (`CommandPalette`)**
+* **Progress**: 164 / 164 automated tests passing green (0 failures, 0 regressions). Phase 6 100% complete.
 * **Active Branch/Workspace**: Main workspace
 
 ---
@@ -164,6 +215,8 @@ flowchart LR
 | **2026-11-21** | **Task 3.2: CLI Migration Command Engine (TDD) [Phase 3 Complete]** | Enhanced `runMap` in `bin/cli.js` via strict TDD with 4 tests in `tests/cli/migrate.test.mjs`: single file in-place migration, recursive directory scanning, `--dry-run` preview without disk mutation, `--import-source` custom package redirection, and visual transformation summaries. Phase 3 Automated AST Migration 100% complete! | Phase 4.1: Slot-based Compound Component API (`AdaptiveDialog`, `Modal`, `BottomSheet`). |
 | **2026-11-21** | **Task 4.1: Slot-based Compound Anatomy (TDD)** | Decomposed `AdaptiveDialog`, `Modal`, and `BottomSheet` into `.Root`, `.Trigger`, `.Backdrop`, `.Content`, `.Header`, `.Title`, `.Description`, `.Close`, `.Body`, `.Footer`, and `.Handle` via strict TDD with 9 dedicated unit tests (`tests/components/DialogAnatomy.test.mjs`, 140/140 tests passing), retaining 100% backward compatibility with simple prop-based invocations. | Phase 4.2: Interaction State Machine (Modal ↔ BottomSheet). |
 | **2026-11-21** | **Task 4.2: Interaction State Machine (TDD) [Phase 4 Complete]** | Implemented metamorphic interaction state machine in `src/core/dialogStateMachine.ts` with 8 dedicated unit tests (`tests/core/dialogStateMachine.test.mjs`, 148/148 tests passing): manages viewport breakpoints (desktop Modal $\leftrightarrow$ mobile BottomSheet), swipe/pull-down gestures with resistance clamping, Escape and backdrop dismissals, and seamless integration into `AdaptiveDialog`. | Phase 5.1 & 5.2: Zero-JS Semantic CSS Token Bridge (from daisyUI). |
-| **2026-11-21** | **Phase 5: Zero-JS Semantic CSS Token Bridge (TDD) [All 5 Phases Complete]** | Implemented framework-agnostic zero-JS utility classes (`.ds-btn`, `.ds-card`, `.ds-input`, `.ds-badge`) and pure CSS theme selectors (`[data-theme="emerald"]`, `[data-theme="slate"]`, `[data-theme="genai-neon"]`) generated via `scripts/build-tokens.mjs` into `dist/css/design-system.css` and `dist/css/tokens.css` with dedicated unit tests in `tests/css/semanticBridge.test.mjs`. All 150/150 tests across the entire enterprise design system suite passing 100% green! | Production Ready & Ongoing Maintenance. |
+| **2026-11-21** | **Phase 5: Zero-JS Semantic CSS Token Bridge (TDD) [All 5 Phases Complete]** | Implemented framework-agnostic zero-JS utility classes (`.ds-btn`, `.ds-card`, `.ds-input`, `.ds-badge`) and pure CSS theme selectors (`[data-theme="emerald"]`, `[data-theme="slate"]`, `[data-theme="genai-neon"]`) generated via `scripts/build-tokens.mjs` into `dist/css/design-system.css` and `dist/css/tokens.css` with dedicated unit tests in `tests/css/semanticBridge.test.mjs`. All 150/150 tests across the entire enterprise design system suite passing 100% green! | Phase 6.1: Schema-Driven Form Container (`Form`, `Form.Item`, `useForm`). |
+| **2026-11-21** | **Task 6.1: Schema-Driven Form Container (TDD)** | Implemented Ant Design–inspired zero-bloat `<Form>`, `<Form.Item>`, and `useForm()` in `src/components/forms/Form.ts` with 8 dedicated unit tests (`tests/components/Form.test.mjs`, 158/158 tests passing green): supports validation rules (`required`, `min`, `max`, `pattern`, custom async `validator`), controlled value binding to design system inputs, automatic `aria-invalid` / error feedback, and form submission lifecycle (`onFinish`, `onFinishFailed`, `resetFields`). | Phase 6.2: High-Density Table Domain Schemas (`DataTable` Column Definition Model). |
+| **2026-11-21** | **Task 6.2: High-Density Table Domain Schemas (TDD) [Phase 6 Complete]** | Enhanced `DataTable` in `src/components/dashboard/DataTable.ts` with 6 dedicated unit tests (`tests/components/DataTableSchema.test.mjs`, 164/164 tests passing green): supports column pinning (`fixed: 'left' | 'right'`), custom sorter comparator function (`sorter`), multi-column filter predicates (`onFilter`), CSV & JSON data export helpers (`exportTableToCsv`, `exportTableToJson`), and standalone `<Pagination />` container integration. Phase 6 Enterprise Domain Models 100% complete! | Phase 7.1: Accessible Keyboard-Driven Search Palette (`CommandPalette`). |
 
 

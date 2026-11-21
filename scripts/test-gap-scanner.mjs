@@ -45,6 +45,7 @@ export function analyzeComponentGaps(targetDir = './src') {
     'Accordion': { cat: 'Navigation Systems', import: 'Accordion', variants: ['outlined', 'filled', 'borderless', 'items'] },
 
     // Selection & Inputs
+    'Form': { cat: 'Text Inputs & Forms', import: 'Form', variants: ['vertical', 'horizontal', 'inline', 'validation', 'rules'] },
     'Input': { cat: 'Text Inputs & Forms', import: 'Input', variants: ['filled', 'outlined', 'leading-icon', 'trailing-action', 'affix', 'error'] },
     'TextField': { cat: 'Text Inputs & Forms', import: 'Input', note: 'Use <Input />' },
     'Textarea': { cat: 'Text Inputs & Forms', import: 'Textarea', variants: ['outlined', 'filled', 'autoExpand', 'counter'] },

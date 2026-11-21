@@ -55,6 +55,9 @@ export function scanAndMapComponents(targetDir = './src') {
     'CommandPrimitive': { replacement: 'CommandPalette', variant: 'modal search palette', type: 'Navigation' },
 
     // Inputs & Forms
+    'form': { replacement: 'Form', variant: 'vertical | horizontal | inline', type: 'Form Container' },
+    'Form': { replacement: 'Form', variant: 'vertical | horizontal | inline', type: 'Form Container' },
+    'FormItem': { replacement: 'Form.Item', variant: 'label, rules, error', type: 'Form Sub-element' },
     'input': { replacement: 'Input', variant: 'outlined', type: 'HTML Native' },
     'Input': { replacement: 'Input', variant: 'filled | outlined | with icon', type: 'Form Atom' },
     'TextField': { replacement: 'Input', variant: 'filled | outlined', type: 'Form Atom' },

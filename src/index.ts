@@ -24,6 +24,7 @@ export * from './components/inputs/Slider';
 export * from './components/inputs/Stepper';
 export * from './components/inputs/SegmentedControl';
 export * from './components/inputs/Select';
+export * from './components/forms/Form';
 
 // Layer 2: Layout & Navigation Components (Desktop, Tablet, Phone)
 export * from './components/organisms/Sidebar';

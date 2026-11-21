@@ -375,6 +375,7 @@ function runAdd(componentName, cmdArgs) {
     'stepper': ['inputs/Stepper.tsx'],
     'segmented-control': ['inputs/SegmentedControl.tsx'],
     'select': ['inputs/Select.ts', 'inputs/Select.tsx'],
+    'form': ['forms/Form.ts', 'forms/Form.tsx'],
     'dropdown-menu': ['molecules/DropdownMenu.ts', 'molecules/DropdownMenu.tsx'],
     'accordion': ['molecules/Accordion.ts', 'molecules/Accordion.tsx'],
     // Layer 2: Layout & Navigation Components
@@ -386,7 +387,7 @@ function runAdd(componentName, cmdArgs) {
     'tabs': ['molecules/Tabs.tsx'],
     // Layer 4: Data Display & Content Components
     'kpi-card': ['dashboard/KpiCard.tsx'],
-    'data-table': ['dashboard/DataTable.tsx'],
+    'data-table': ['dashboard/DataTable.ts', 'dashboard/DataTable.tsx'],
     'pagination': ['data/Pagination.ts', 'data/Pagination.tsx'],
     'chart': ['dashboard/ChartContainer.tsx'],
     'list-item': ['data/ListItem.tsx'],
@@ -409,7 +410,7 @@ function runAdd(componentName, cmdArgs) {
 
   const groupMap = {
     'layout': ['adaptive-layout', 'sidebar', 'nav-rail', 'bottom-nav', 'hamburger-menu', 'tabs', 'divider'],
-    'inputs': ['button', 'input', 'textarea', 'switch', 'chip', 'slider', 'stepper', 'segmented-control', 'checkbox', 'radio', 'radio-group', 'select'],
+    'inputs': ['button', 'input', 'textarea', 'switch', 'chip', 'slider', 'stepper', 'segmented-control', 'checkbox', 'radio', 'radio-group', 'select', 'form'],
     'data': ['kpi-card', 'data-table', 'pagination', 'chart', 'list-item', 'badge', 'avatar'],
     'feedback': ['adaptive-dialog', 'modal', 'bottom-sheet', 'snackbar', 'tooltip', 'alert', 'circular-progress', 'skeleton'],
     'dashboard': ['kpi-card', 'data-table', 'chart'],
