@@ -4,7 +4,7 @@
   "description": "Multi-device enterprise design system framework for analytical dashboards and Gen AI applications",
   "type": "module",
   "bin": {
-    "design-system": "./bin/cli.js"
+    "design-system": "bin/cli.js"
   },
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
